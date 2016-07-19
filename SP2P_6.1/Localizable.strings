@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  SP2P_6.0
+
+  Created by 李小斌 on 14-6-4.
+  Copyright (c) 2014年 EIMS. All rights reserved.
+*/
+
+/***标签卡标签名称***/
+"Tab_Home" = "首页";
+"Tab_Financial" = "理财";
+"Tab_Loan" = "借款";
+"tab_Me" = "帐户";
+
+/***标签卡标签名称***/
+"Sort_Default" = "默认排序";
+"Sort_Money" = "金额";
+"Sort_Rate" = "利率";
+"Sort_Progress" = "进度";
+"Sort_Quality" = "还款日";
+
+"Sort_Capital" = "待收本金";
+"Sort_Time" = "剩余时间";
+"Sort_Quality_Creditor" = "还款日";
+"Login_No" = "立即登录";
+
+
+/***首页***/
+"More"="更多";
+
+
+/***首页***/
+"AccountNil"="账号不能为空";
+"PhoneNil"="手机号不能为空";
+"PhoneFormatError"="手机格式不正确";
