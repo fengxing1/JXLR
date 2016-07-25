@@ -20,6 +20,7 @@
 #import "AdScrollViewLabel.h"
 #import "BorrowingDetailsViewController.h"
 #import "ToolBlackView.h"
+#import "HomeBid.h"
 
 #define AppStoreAPI @"http://itunes.apple.com/lookup?id=1049683807"
 #define AppStoreDownLoadUrl @"https://itunes.apple.com/cn/app/lai-rong-jin-fu/id1049683807?mt=8"
@@ -48,6 +49,7 @@
 @property (nonatomic, strong) UILabel *labNewBidMessage;
 //新标内容
 @property (nonatomic, strong) UIView *viewContentNewBid;
+@property (nonatomic, strong) HomeBid *homeBid;
 @property (nonatomic, strong) ViewInvestContent *viewInvestContentOne;
 @property (nonatomic, strong) ViewInvestContent *viewInvestContentTwo;
 //重新连接
@@ -66,6 +68,8 @@
     [super viewDidLoad];
     //获取刷新新标通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestData) name:InvestRefresh object:nil];
+    
+    //self.navigationController.navigationBarHidden = YES;
     
     // 初始化数据
     [self initData];
@@ -295,19 +299,27 @@ bool isUpdate = YES;
     _viewContentNewBid.backgroundColor=[UIColor clearColor];
     [_scrollContent addSubview:_viewContentNewBid];
     
-    _viewInvestContentOne=[[ViewInvestContent alloc] init];
-    _viewInvestContentOne.frame=CGRectMake(0, 0, WidthScreen, HeightViewInvestContent);
-    [_viewInvestContentOne.btnContent addTarget:self action:@selector(onClickOneBid) forControlEvents:UIControlEventTouchUpInside];
-    [_viewInvestContentOne.btnInvest addTarget:self action:@selector(onClickOneBidButton) forControlEvents:UIControlEventTouchUpInside];
-    [_viewInvestContentOne initContentBackground];
-    [_viewContentNewBid addSubview:_viewInvestContentOne];
+    _homeBid =[[HomeBid alloc] init];
+    _homeBid.frame=CGRectMake(0, 0, WidthScreen, WidthScreen/1.1);
+    [_homeBid.btnContent addTarget:self action:@selector(onClickOneBid) forControlEvents:UIControlEventTouchUpInside];
+    [_homeBid.btnInvest addTarget:self action:@selector(onClickOneBidButton) forControlEvents:UIControlEventTouchUpInside];
+    [_homeBid initContentBackground];
+    [_viewContentNewBid addSubview:_homeBid];
+
     
-    _viewInvestContentTwo=[[ViewInvestContent alloc]init];
-    _viewInvestContentTwo.frame=CGRectMake(0, CGRectGetMaxY(_viewInvestContentOne.frame)+SpaceMediumSmall, WidthScreen, HeightViewInvestContent);
-    [_viewInvestContentTwo.btnContent addTarget:self action:@selector(onClickTwoBid) forControlEvents:UIControlEventTouchUpInside];
-    [_viewInvestContentTwo.btnInvest addTarget:self action:@selector(onClickTwoBidButton) forControlEvents:UIControlEventTouchUpInside];
-    [_viewInvestContentTwo initContentBackground];
-    [_viewContentNewBid addSubview:_viewInvestContentTwo];
+//    _viewInvestContentOne=[[ViewInvestContent alloc] init];
+//    _viewInvestContentOne.frame=CGRectMake(0, 0, WidthScreen, HeightViewInvestContent);
+//    [_viewInvestContentOne.btnContent addTarget:self action:@selector(onClickOneBid) forControlEvents:UIControlEventTouchUpInside];
+//    [_viewInvestContentOne.btnInvest addTarget:self action:@selector(onClickOneBidButton) forControlEvents:UIControlEventTouchUpInside];
+//    [_viewInvestContentOne initContentBackground];
+//    [_viewContentNewBid addSubview:_viewInvestContentOne];
+//
+//    _viewInvestContentTwo=[[ViewInvestContent alloc]init];
+//    _viewInvestContentTwo.frame=CGRectMake(0, CGRectGetMaxY(_viewInvestContentOne.frame)+SpaceMediumSmall, WidthScreen, HeightViewInvestContent);
+//    [_viewInvestContentTwo.btnContent addTarget:self action:@selector(onClickTwoBid) forControlEvents:UIControlEventTouchUpInside];
+//    [_viewInvestContentTwo.btnInvest addTarget:self action:@selector(onClickTwoBidButton) forControlEvents:UIControlEventTouchUpInside];
+//    [_viewInvestContentTwo initContentBackground];
+//    [_viewContentNewBid addSubview:_viewInvestContentTwo];
     
     _viewContentNewBid.frame=CGRectMake(0, CGRectGetMaxY(_btnAnnounceMent.frame)+SpaceMediumSmall, WidthScreen, CGRectGetMaxY(_viewInvestContentTwo.frame));
     _viewContentNewBid.hidden=YES;
@@ -468,6 +480,7 @@ bool isUpdate = YES;
             [_arrayNewBidData removeAllObjects];
             [_arrayNewBidData addObject:newBids[0]];
             [_arrayNewBidData addObject:newBids[1]];
+            _homeBid.investment = newBids[0];
             _viewInvestContentOne.investment=newBids[0];
             _viewInvestContentTwo.investment=newBids[1];
             [self onHaveNewBidMessage];
