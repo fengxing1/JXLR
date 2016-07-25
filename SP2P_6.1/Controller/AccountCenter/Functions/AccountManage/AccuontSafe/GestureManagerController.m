@@ -120,7 +120,7 @@
             
             [CLLockVC showModifyLockVCInVC:self successBlock:^(CLLockVC *lockVC, NSString *pwd) {
                 //隐藏所有模态视图控制器
-                UIViewController *rootVC = self.presentingViewController;
+                UIViewController *rootVC = lockVC;
                 while (rootVC.presentingViewController) {
                     rootVC = rootVC.presentingViewController;
                 }
@@ -144,12 +144,12 @@
             //密码正确
             
             [[AppDefaultUtil sharedInstance] setGesturesPasswordStatusWithFlag:NO];
-            [_dataArr  removeObject:@"修改手势密码"];
+            [_dataArr removeObject:@"修改手势密码"];
             
             [_tableView reloadData];
             
             //隐藏所有模态视图控制器
-            UIViewController *rootVC = self.presentingViewController;
+            UIViewController *rootVC = lockVC;
             while (rootVC.presentingViewController) {
                 rootVC = rootVC.presentingViewController;
             }
@@ -164,11 +164,11 @@
             
             //设置启用手势密码
             [[AppDefaultUtil sharedInstance] setGesturesPasswordStatusWithFlag:YES];
-            
+            [_dataArr addObject:@"修改手势密码"];
             [_tableView reloadData];
             
             //隐藏所有模态视图控制器
-            UIViewController *rootVC = self.presentingViewController;
+            UIViewController *rootVC = lockVC;
             while (rootVC.presentingViewController) {
                 rootVC = rootVC.presentingViewController;
             }

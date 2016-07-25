@@ -213,8 +213,8 @@
         
         CGFloat lineW =CoreLockArcLineW;
         
-        CGFloat sizeWH = self.bounds.size.width - lineW;
-        CGFloat originXY = lineW *.5f;
+        CGFloat sizeWH = self.bounds.size.width-2 - lineW;
+        CGFloat originXY = lineW ;
         
         //添加一个圆环路径
         _calRect = (CGRect){CGPointMake(originXY, originXY),CGSizeMake(sizeWH, sizeWH)};

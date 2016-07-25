@@ -352,7 +352,7 @@ bool isUpdate = YES;
     BorrowingDetailsView.rate = investment.rate;
     BorrowingDetailsView.timeString = investment.time;
     BorrowingDetailsView.stateNum = 0;
-    BorrowingDetailsView.HidesBottomBarWhenPushed = YES;
+    BorrowingDetailsView.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:BorrowingDetailsView animated:YES];
 }
 

@@ -501,41 +501,50 @@
             case 0://投资管理
             {
                 ViewControllerInvestManager *vc=[[ViewControllerInvestManager alloc] init];
-                [self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
+                [self.navigationController pushViewController:vc animated:YES];
+                //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
             }
                 break;
             case 1://借款管理
             {
                 ViewControllerBorrowManager *vc=[[ViewControllerBorrowManager alloc] init];
-                [self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
+                [self.navigationController pushViewController:vc animated:YES];
+                //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
             }
                 break;
             case 2://债权管理
             {
                 DebtManagementViewController *vc=[[DebtManagementViewController alloc] init];
-                [self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
+                [self.navigationController pushViewController:vc animated:YES];
+                //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
             }
                 break;
             case 3://资金流水
             {
                 FundRecordViewController *vc=[[FundRecordViewController alloc] init];
-                [self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
+                [self.navigationController pushViewController:vc animated:YES];
+                //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
             }
                 break;
             case 4://站内信息
             {
                 MailViewController *vc=[[MailViewController alloc] init];
-                [self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
+                [self.navigationController pushViewController:vc animated:YES];
+                //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
+                break;
             }
             case 5://帐户管理
             {
                 ViewControllerAccountManager *vc=[[ViewControllerAccountManager alloc] init];
-                [self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
+                [self.navigationController pushViewController:vc animated:YES];
+                //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
+                break;
             }
             case 6://我的银行卡
             {
                 BankCardManageViewController *vc=[[BankCardManageViewController alloc] init];
-                [self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
+                [self.navigationController pushViewController:vc animated:YES];
+                //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
             }
                 break;
             default:

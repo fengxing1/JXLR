@@ -66,7 +66,7 @@
     
     //Jaqen-start:增加安全项－手势密码
     
-    _dataArr = [[NSMutableArray alloc] initWithArray:@[@"修改登录密码",@"设置安全问题",@"设置安全手机",@"设置手势密码"]];
+    _dataArr = [[NSMutableArray alloc] initWithArray:@[@"修改登录密码",@"设置安全问题",@"设置安全手机",@"管理手势密码"]];
     
     //Jaqen-end
 }

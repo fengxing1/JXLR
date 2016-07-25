@@ -39,9 +39,32 @@
 -(instancetype)init{
     self=[super init];
     if(self){
-        [self initView];
+        [self initView1];
     }
     return self;
+}
+
+-(void)initView1{
+    self.btnContent = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.btnContent.frame = CGRectMake(0, 0, WidthScreen, WidthScreen);
+    self.btnContent.backgroundColor = [UIColor redColor];
+    [self addSubview:self.btnContent];
+    
+    //等级
+    float heightImageLevel=(HeightViewIHeader*0.625);
+    self.imageViewLevel=[[UIImageView alloc] initWithFrame:CGRectMake(SpaceMediumSmall, (HeightViewIHeader-heightImageLevel)/2, heightImageLevel, heightImageLevel)];
+    self.imageViewLevel.layer.masksToBounds=YES;
+    self.imageViewLevel.contentMode=UIViewContentModeScaleAspectFill;
+    self.imageViewLevel.layer.cornerRadius=heightImageLevel/2.0;
+    [self addSubview:self.imageViewLevel];
+    
+    //标题
+    self.labTitle=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.imageViewLevel.frame)+SpaceSmall, 0, WidthScreen-CGRectGetMaxX(self.imageViewLevel.frame)-SpaceSmall-SpaceBig-HeightViewIHeader, HeightViewIHeader)];
+    self.labTitle.font=FontTextContent;
+    self.labTitle.textColor=ColorTextContent;
+    [self addSubview:self.labTitle];
+    
+
 }
 
 -(void)initView{
@@ -172,7 +195,7 @@
         
         //年化利率
         NSString *strApr = [NSString stringWithFormat:@"%0.1f%%",_investment.rate];
-        int numberApr=strApr.length-1;
+        int numberApr=(int)strApr.length-1;
         NSMutableAttributedString *attrStrAprNum=[[NSMutableAttributedString alloc] initWithString:strApr];
         [attrStrAprNum addAttribute:NSForegroundColorAttributeName value:ColorRedMain range:NSMakeRange(0, numberApr)];
         [attrStrAprNum addAttribute:NSForegroundColorAttributeName value:ColorTextContent range:NSMakeRange(numberApr, 1)];
@@ -182,7 +205,7 @@
         
         float amount=(_investment.amount/10000.0);
         NSString *strAmount=[NSString stringWithFormat:@"%.1f万",amount];
-        int numberAmount=strAmount.length-1;
+        int numberAmount=(int)strAmount.length-1;
         NSMutableAttributedString *attrStrAmountNum=[[NSMutableAttributedString alloc] initWithString:strAmount];
         [attrStrAmountNum addAttribute:NSForegroundColorAttributeName value:ColorRedMain range:NSMakeRange(0, numberAmount)];
         [attrStrAmountNum addAttribute:NSForegroundColorAttributeName value:ColorTextContent range:NSMakeRange(numberAmount, 1)];
@@ -195,15 +218,15 @@
         int lenghtPeriod=1;//单位长度
         if([_investment.unitstr isEqualToString:@"0"]){
             strPeriod = [NSString stringWithFormat:@"%@个月",_investment.time];
-            numberAmount=strPeriod.length-2;
+            numberAmount=(int)strPeriod.length-2;
             lenghtPeriod=2;
         }  else if([_investment.unitstr isEqualToString:@"-1"]){
             strPeriod = [NSString stringWithFormat:@"%@年",_investment.time];
-            numberAmount=strPeriod.length-1;
+            numberAmount=(int)strPeriod.length-1;
         }
         else{
             strPeriod = [NSString stringWithFormat:@"%@天",_investment.time];
-            numberAmount=strPeriod.length-1;
+            numberAmount=(int)strPeriod.length-1;
         }
         NSMutableAttributedString *attrStrPeriod=[[NSMutableAttributedString alloc] initWithString:strPeriod];
         [attrStrPeriod addAttribute:NSForegroundColorAttributeName value:ColorRedMain range:NSMakeRange(0, numberPeriod)];

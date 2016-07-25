@@ -16,8 +16,8 @@
 @property (strong, nonatomic) NSString *channelId;
 @property (strong, nonatomic) NSString *userId;
 @property (strong, nonatomic) NSString *openType;
-@property (nonatomic,strong) NSString *lastVersion;
-@property (nonatomic,strong) NSString *releaseNotes;
+@property (nonatomic, strong) NSString *lastVersion;
+@property (nonatomic, strong) NSString *releaseNotes;
 
 @end
 

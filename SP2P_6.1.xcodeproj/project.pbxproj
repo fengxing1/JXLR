@@ -27,6 +27,7 @@
 		5B4748FC1A0B1BC500442D86 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4748FB1A0B1BC500442D86 /* libstdc++.dylib */; };
 		5B4748FE1A0B1BCE00442D86 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4748FD1A0B1BCE00442D86 /* MessageUI.framework */; };
 		5B4749001A0B1BE400442D86 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4748FF1A0B1BE400442D86 /* MapKit.framework */; };
+		9B5D59F91D45A46600A8913B /* HKPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D59F81D45A46600A8913B /* HKPieChartView.m */; };
 		9B9856DC1D3DBB200078AE5D /* GestureManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9856DB1D3DBB200078AE5D /* GestureManagerController.m */; };
 		9BAF16FF1D3CA00300DCA761 /* CLLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF16E81D3CA00300DCA761 /* CLLockVC.m */; };
 		9BAF17001D3CA00300DCA761 /* CLLockVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BAF16E91D3CA00300DCA761 /* CLLockVC.xib */; };
@@ -543,6 +544,8 @@
 		5B4748FB1A0B1BC500442D86 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		5B4748FD1A0B1BCE00442D86 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5B4748FF1A0B1BE400442D86 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9B5D59F71D45A46600A8913B /* HKPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HKPieChartView.h; path = "../../../../Desktop/Jaqen_备份/环形进度条/PieChart/PieChart/HKPieChartView/HKPieChartView.h"; sourceTree = "<group>"; };
+		9B5D59F81D45A46600A8913B /* HKPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKPieChartView.m; path = "../../../../Desktop/Jaqen_备份/环形进度条/PieChart/PieChart/HKPieChartView/HKPieChartView.m"; sourceTree = "<group>"; };
 		9B9856DA1D3DBB200078AE5D /* GestureManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureManagerController.h; sourceTree = "<group>"; };
 		9B9856DB1D3DBB200078AE5D /* GestureManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureManagerController.m; sourceTree = "<group>"; };
 		9BAF16E71D3CA00300DCA761 /* CLLockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockVC.h; sourceTree = "<group>"; };
@@ -1654,6 +1657,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9B5D59F61D45A43300A8913B /* HKPieChartView(环形进度条) */ = {
+			isa = PBXGroup;
+			children = (
+				9B5D59F71D45A46600A8913B /* HKPieChartView.h */,
+				9B5D59F81D45A46600A8913B /* HKPieChartView.m */,
+			);
+			name = "HKPieChartView(环形进度条)";
+			sourceTree = "<group>";
+		};
 		9BAF16E61D3CA00300DCA761 /* CoreLock */ = {
 			isa = PBXGroup;
 			children = (
@@ -2362,6 +2374,7 @@
 		DF5C9EEF1CAE54BA00F6863B /* Libs(第三方插件) */ = {
 			isa = PBXGroup;
 			children = (
+				9B5D59F61D45A43300A8913B /* HKPieChartView(环形进度条) */,
 				9BAF17091D3CA03200DCA761 /* CoreLock(手势密码) */,
 				C0DB280C1CDC38A700E67B1D /* ZXPUnicode(中外文编码) */,
 				DF5C9EF01CAE54BA00F6863B /* AjComboBox(下拉框) */,
@@ -4341,6 +4354,7 @@
 				DF5CA1E11CAE54BB00F6863B /* TableViewCellPersonItem.m in Sources */,
 				DF5CA2591CAE54BB00F6863B /* AFHTTPRequestOperationManager.m in Sources */,
 				DF5CA2E01CAE54BC00F6863B /* Member.m in Sources */,
+				9B5D59F91D45A46600A8913B /* HKPieChartView.m in Sources */,
 				DF5CA4B41CAE645800F6863B /* VerifySafeQuestionViewThreeController.m in Sources */,
 				DF5CA1CA1CAE54BB00F6863B /* PaymentViewController.m in Sources */,
 				DF5CA4D81CAE645800F6863B /* LiteratureAuditMainViewController.m in Sources */,

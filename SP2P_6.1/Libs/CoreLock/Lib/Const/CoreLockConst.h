@@ -25,7 +25,7 @@
 /*
  *  外环线条颜色：默认
  */
-#define CoreLockCircleLineNormalColor rgba(253,83,83,1)
+#define CoreLockCircleLineNormalColor rgba(255,255,255,1)
 
 
 /*
@@ -50,7 +50,7 @@
 /*
  *  警示文字颜色
  */
-#define CoreLockWarnColor rgba(254,82,92,1)
+#define CoreLockWarnColor rgba(253,83,83,1)
 
 
 
