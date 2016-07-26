@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Investment.h"
 
-#define HeightViewInvestContent (WidthScreen/1.2)
+#define HeightViewInvestContent (WidthScreen/1.1)
 
 @interface HomeBid : UIView
 

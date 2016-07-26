@@ -10,17 +10,19 @@
 #import "ViewBidHot.h"
 #import "HKPieChartView.h"
 
-#define HeightViewIHeader  (HeightViewInvestContent*0.12)//上部
+#define HeightViewIHeader  (HeightViewInvestContent*0.10)//上部
 #define HeightViewICenter (HeightViewInvestContent*0.75)//中部
-#define HeightViewIBottom (HeightViewInvestContent*0.13)//下部
-#define SpaceBtnBibToLeft  SpaceBig  //投标按钮到右边的距离
-#define SpaceContentRight SpaceMediumSmall //右边距
-#define WidthBtnBid (WidthScreen-SpaceBtnBibToLeft*2)  //投标按钮的宽度
-#define HeightBtnBid (HeightViewIBottom) //投标按钮的高度
-#define WidthAprAndPeriod ((WidthScreen-SpaceContentRight*2)*0.3) //利率和期限的宽度
-#define HeightAprAndPeriodAndAmount (HeightViewICenter*0.2) //利率 期限 金额的高度
-#define WidthAmount ((WidthScreen-SpaceContentRight*2)*0.4) // 金额的宽度
-#define HeightTextBottom (HeightViewICenter*0.1)  //中间底部小文字高度
+#define HeightViewIBottom (HeightViewInvestContent*0.15)//下部
+#define SpaceContent SpaceMediumSmall //右边距
+#define SpaceBtnBib  SpaceBig  //投标按钮到右边的距离
+#define WidthBtnBid (WidthScreen-SpaceBtnBib*2)  //投标按钮的宽度
+#define HeightBtnBid (HeightViewIBottom-SpaceSmall*2) //投标按钮的高度
+#define WidthAprAndPeriod ((WidthScreen-SpaceContent*2)*0.3) //利率和期限的宽度
+#define WidthAmount ((WidthScreen-SpaceContent*2)*0.4) // 金额的宽度
+
+#define HeightPieChart (HeightViewICenter*0.82) //环形进度条的高度
+#define HeightAprAndPeriodAndAmount (HeightViewICenter*0.12) //利率 期限 金额的高度
+#define HeightTextBottom (HeightViewICenter*0.06)  //年化、借款、期限的文字高度
 
 #define FontContentSmall [UIFont systemFontOfSize:14]
 @interface HomeBid()
@@ -71,26 +73,26 @@
     [self addSubview:viewLineOne];
     
     //投标进度
-    _pieChartView = [[HKPieChartView alloc] initWithFrame:CGRectMake((WidthScreen-HeightViewICenter*0.9)/2, CGRectGetMaxY(viewLineOne.frame),HeightViewICenter*0.9, HeightViewICenter*0.75)];
+    _pieChartView = [[HKPieChartView alloc] initWithFrame:CGRectMake((WidthScreen-HeightViewICenter)/2, CGRectGetMaxY(viewLineOne.frame),HeightViewICenter, HeightViewICenter*0.82)];
         [self addSubview:_pieChartView];
     _pieChartView.userInteractionEnabled = NO;
     
     //年化利率
-    _labAprNum=[[UILabel alloc] initWithFrame:CGRectMake(SpaceContentRight, CGRectGetMaxY(_pieChartView.frame),WidthAprAndPeriod, HeightAprAndPeriodAndAmount)];
+    _labAprNum=[[UILabel alloc] initWithFrame:CGRectMake(SpaceContent, CGRectGetMaxY(_pieChartView.frame),WidthAprAndPeriod, HeightAprAndPeriodAndAmount)];
     _labAprNum.textAlignment=NSTextAlignmentCenter;
     [self addSubview:_labAprNum];
     
     //金额
-    _labAmountNum=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_labAprNum.frame), CGRectGetMaxY(_pieChartView.frame),WidthAmount,  HeightAprAndPeriodAndAmount)];
+    _labAmountNum=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_labAprNum.frame), CGRectGetMinY(_labAprNum.frame),WidthAmount,  HeightAprAndPeriodAndAmount)];
     _labAmountNum.textAlignment=NSTextAlignmentCenter;
     [self addSubview:_labAmountNum];
     
     //期限
-    _labPeriod=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_labAmountNum.frame), CGRectGetMaxY(_pieChartView.frame),WidthAprAndPeriod,  HeightAprAndPeriodAndAmount)];
+    _labPeriod=[[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_labAmountNum.frame), CGRectGetMinY(_labAprNum.frame),WidthAprAndPeriod,  HeightAprAndPeriodAndAmount)];
     _labPeriod.textAlignment=NSTextAlignmentCenter;
     [self addSubview:_labPeriod];
     
-    UILabel *labAprText=[[UILabel alloc] initWithFrame:CGRectMake(SpaceContentRight, HeightViewIHeader+HeightViewICenter*0.9,WidthAprAndPeriod,HeightTextBottom)];
+    UILabel *labAprText=[[UILabel alloc] initWithFrame:CGRectMake(SpaceContent, CGRectGetMaxY(_labAprNum.frame),WidthAprAndPeriod,HeightTextBottom)];
     labAprText.textAlignment=NSTextAlignmentCenter;
     labAprText.text=@"年化利率";
     labAprText.font=FontTextSmall;
@@ -114,7 +116,7 @@
     
     //投标
     _btnInvest=[UIButton buttonWithType:UIButtonTypeCustom];
-    _btnInvest.frame=CGRectMake(SpaceBtnBibToLeft, HeightViewIHeader+HeightViewICenter, WidthBtnBid, HeightBtnBid);
+    _btnInvest.frame=CGRectMake(SpaceBtnBib, HeightViewIHeader+HeightViewICenter+SpaceSmall, WidthBtnBid, HeightBtnBid);
     [_btnInvest.layer setCornerRadius:3.5f];
     _btnInvest.layer.masksToBounds=YES;
     [self addSubview:_btnInvest];

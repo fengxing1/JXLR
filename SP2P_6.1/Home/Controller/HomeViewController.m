@@ -307,7 +307,7 @@ bool isUpdate = YES;
 //    [_viewContentNewBid addSubview:_homeBid];
     
     _homeBid=[[HomeBid alloc]init];
-    _homeBid.frame=CGRectMake(0, CGRectGetMaxY(_viewInvestContentOne.frame)+SpaceMediumSmall, WidthScreen, HeightViewInvestContent);
+    _homeBid.frame=CGRectMake(0, CGRectGetMinY(_viewContentNewBid.frame), WidthScreen, HeightViewInvestContent);
     [_homeBid.btnContent addTarget:self action:@selector(onClickOneBid) forControlEvents:UIControlEventTouchUpInside];
     [_homeBid.btnInvest addTarget:self action:@selector(onClickOneBidButton) forControlEvents:UIControlEventTouchUpInside];
     [_homeBid initContentBackground];

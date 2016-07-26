@@ -29,7 +29,6 @@
 		5B4749001A0B1BE400442D86 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B4748FF1A0B1BE400442D86 /* MapKit.framework */; };
 		9B5D59F91D45A46600A8913B /* HKPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D59F81D45A46600A8913B /* HKPieChartView.m */; };
 		9B5D5A3B1D45E6E700A8913B /* HomeBid.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D5A3A1D45E6E700A8913B /* HomeBid.m */; };
-		9B5D5A3D1D45E75D00A8913B /* HomeBid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B5D5A3C1D45E75D00A8913B /* HomeBid.xib */; };
 		9B9856DC1D3DBB200078AE5D /* GestureManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9856DB1D3DBB200078AE5D /* GestureManagerController.m */; };
 		9BAF16FF1D3CA00300DCA761 /* CLLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF16E81D3CA00300DCA761 /* CLLockVC.m */; };
 		9BAF17001D3CA00300DCA761 /* CLLockVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BAF16E91D3CA00300DCA761 /* CLLockVC.xib */; };
@@ -550,7 +549,6 @@
 		9B5D59F81D45A46600A8913B /* HKPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HKPieChartView.m; path = "../../../../Desktop/Jaqen_备份/环形进度条/PieChart/PieChart/HKPieChartView/HKPieChartView.m"; sourceTree = "<group>"; };
 		9B5D5A391D45E6E700A8913B /* HomeBid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeBid.h; sourceTree = "<group>"; };
 		9B5D5A3A1D45E6E700A8913B /* HomeBid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeBid.m; sourceTree = "<group>"; };
-		9B5D5A3C1D45E75D00A8913B /* HomeBid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeBid.xib; sourceTree = "<group>"; };
 		9B9856DA1D3DBB200078AE5D /* GestureManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureManagerController.h; sourceTree = "<group>"; };
 		9B9856DB1D3DBB200078AE5D /* GestureManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureManagerController.m; sourceTree = "<group>"; };
 		9BAF16E71D3CA00300DCA761 /* CLLockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockVC.h; sourceTree = "<group>"; };
@@ -2383,7 +2381,6 @@
 				DF5C9EEE1CAE54BA00F6863B /* HomeListView.m */,
 				9B5D5A391D45E6E700A8913B /* HomeBid.h */,
 				9B5D5A3A1D45E6E700A8913B /* HomeBid.m */,
-				9B5D5A3C1D45E75D00A8913B /* HomeBid.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4256,7 +4253,6 @@
 				DF5CA24F1CAE54BB00F6863B /* MJRefresh.bundle in Resources */,
 				DF5CA28C1CAE54BB00F6863B /* Resource.bundle in Resources */,
 				4354B29019419FAE00B2C2A5 /* Images.xcassets in Resources */,
-				9B5D5A3D1D45E75D00A8913B /* HomeBid.xib in Resources */,
 				DF5CA26A1CAE54BB00F6863B /* checkbox1_checked.png in Resources */,
 				DF5CA2941CAE54BC00F6863B /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				C4E3DDF61A0CC31300F5B15F /* BPushConfig.plist in Resources */,
