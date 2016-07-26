@@ -42,6 +42,7 @@
 		9BAF17081D3CA00300DCA761 /* CLLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF16FE1D3CA00300DCA761 /* CLLockView.m */; };
 		9BAF17131D3CA06A00DCA761 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF170E1D3CA06A00DCA761 /* NSString+File.m */; };
 		9BAF17141D3CA06A00DCA761 /* CoreArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF17101D3CA06A00DCA761 /* CoreArchive.m */; };
+		9BFF6A671D47575600BCC9FC /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF6A661D47575600BCC9FC /* UINavigationController+FDFullscreenPopGesture.m */; };
 		C02774681CDC9635003EDA3C /* CellPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = C02774671CDC9635003EDA3C /* CellPartner.m */; };
 		C027746B1CE072F4003EDA3C /* ModelRemoteNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = C027746A1CE072F4003EDA3C /* ModelRemoteNotification.m */; };
 		C055523A1CC0E9C700251682 /* guide_page1.png in Resources */ = {isa = PBXBuildFile; fileRef = C05552361CC0E9C700251682 /* guide_page1.png */; };
@@ -576,6 +577,8 @@
 		9BAF17101D3CA06A00DCA761 /* CoreArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreArchive.m; sourceTree = "<group>"; };
 		9BAF17121D3CA06A00DCA761 /* CoreConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreConst.h; sourceTree = "<group>"; };
 		9BFF6A391D470A0700BCC9FC /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		9BFF6A651D47575600BCC9FC /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		9BFF6A661D47575600BCC9FC /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		C02774661CDC9635003EDA3C /* CellPartner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellPartner.h; sourceTree = "<group>"; };
 		C02774671CDC9635003EDA3C /* CellPartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellPartner.m; sourceTree = "<group>"; };
 		C02774691CE072F4003EDA3C /* ModelRemoteNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelRemoteNotification.h; sourceTree = "<group>"; };
@@ -1789,6 +1792,15 @@
 			name = "UI调试";
 			sourceTree = "<group>";
 		};
+		9BFF6A641D47575600BCC9FC /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				9BFF6A651D47575600BCC9FC /* UINavigationController+FDFullscreenPopGesture.h */,
+				9BFF6A661D47575600BCC9FC /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
 		C0DB280C1CDC38A700E67B1D /* ZXPUnicode(中外文编码) */ = {
 			isa = PBXGroup;
 			children = (
@@ -2390,6 +2402,7 @@
 		DF5C9EEF1CAE54BA00F6863B /* Libs(第三方插件) */ = {
 			isa = PBXGroup;
 			children = (
+				9BFF6A641D47575600BCC9FC /* FDFullscreenPopGesture */,
 				9BFF6A381D4709E700BCC9FC /* UI调试 */,
 				9B5D59F61D45A43300A8913B /* HKPieChartView(环形进度条) */,
 				9BAF17091D3CA03200DCA761 /* CoreLock(手势密码) */,
@@ -2400,7 +2413,6 @@
 				DF5C9F071CAE54BA00F6863B /* iCarousel(旋转切换) */,
 				DF5C9F0A1CAE54BA00F6863B /* IQKeyBoardManager(键盘控制) */,
 				DF5C9F331CAE54BB00F6863B /* JSONKit */,
-				DF5C9F361CAE54BB00F6863B /* KKNavigationController(滑动返回) */,
 				DF5C9F371CAE54BB00F6863B /* LibBPush(百度推送) */,
 				DF5C9F461CAE54BB00F6863B /* MBProgressHUD(提示框) */,
 				DF5C9F4A1CAE54BB00F6863B /* MJRefresh(刷新) */,
@@ -2568,14 +2580,6 @@
 				DF5C9F351CAE54BB00F6863B /* JSONKit.m */,
 			);
 			path = JSONKit;
-			sourceTree = "<group>";
-		};
-		DF5C9F361CAE54BB00F6863B /* KKNavigationController(滑动返回) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "KKNavigationController(滑动返回)";
-			path = KKNavigationController;
 			sourceTree = "<group>";
 		};
 		DF5C9F371CAE54BB00F6863B /* LibBPush(百度推送) */ = {
@@ -4213,6 +4217,7 @@
 			knownRegions = (
 				en,
 				"zh-Hans",
+				Base,
 			);
 			mainGroup = 4354B27119419FAE00B2C2A5;
 			productRefGroup = 4354B27B19419FAE00B2C2A5 /* Products */;
@@ -4574,6 +4579,7 @@
 				DF5CA2C91CAE54BC00F6863B /* Auditing.m in Sources */,
 				DF5CA50D1CAE645800F6863B /* PartnersViewController.m in Sources */,
 				DF5CA2401CAE54BB00F6863B /* IQSegmentedNextPrevious.m in Sources */,
+				9BFF6A671D47575600BCC9FC /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				DF5CA4DF1CAE645800F6863B /* AssigneeLoanStandardDetailsViewController.m in Sources */,
 				DF5CA2E31CAE54BC00F6863B /* MoreAboutUs.m in Sources */,
 				DF5CA29B1CAE54BC00F6863B /* SKSTableViewCellIndicator.m in Sources */,

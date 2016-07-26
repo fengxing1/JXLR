@@ -58,6 +58,7 @@ typedef NS_ENUM(NSInteger,RequestType){
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     [ShareSDK registerApp:@"41721a1de002"];     //参数为ShareSDK官网中添加应用后得到的AppKey
     

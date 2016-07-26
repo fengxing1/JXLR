@@ -66,6 +66,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     //获取刷新新标通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(requestData) name:InvestRefresh object:nil];
     
