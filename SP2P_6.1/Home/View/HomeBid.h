@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Investment.h"
 
-#define HeightViewInvestContent (WidthScreen/1.1)
+#define HeightViewInvestContent (WidthScreen/1.2)
 
 @interface HomeBid : UIView
 
-@property(nonatomic,strong)Investment *investment;
-@property(nonatomic,strong)UIButton *btnContent;
-@property(nonatomic,strong)UIButton *btnInvest;
+@property (nonatomic,strong) Investment *investment;
+@property (nonatomic,strong) UIButton *btnContent;
+@property (nonatomic,strong) UIButton *btnInvest;
 
 -(void)initContentBackground;
 

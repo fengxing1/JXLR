@@ -577,6 +577,7 @@
 		9BAF170F1D3CA06A00DCA761 /* CoreArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreArchive.h; sourceTree = "<group>"; };
 		9BAF17101D3CA06A00DCA761 /* CoreArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreArchive.m; sourceTree = "<group>"; };
 		9BAF17121D3CA06A00DCA761 /* CoreConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreConst.h; sourceTree = "<group>"; };
+		9BFF6A391D470A0700BCC9FC /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		C02774661CDC9635003EDA3C /* CellPartner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellPartner.h; sourceTree = "<group>"; };
 		C02774671CDC9635003EDA3C /* CellPartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellPartner.m; sourceTree = "<group>"; };
 		C02774691CE072F4003EDA3C /* ModelRemoteNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelRemoteNotification.h; sourceTree = "<group>"; };
@@ -1782,6 +1783,14 @@
 			path = CoreExtend;
 			sourceTree = "<group>";
 		};
+		9BFF6A381D4709E700BCC9FC /* UI调试 */ = {
+			isa = PBXGroup;
+			children = (
+				9BFF6A391D470A0700BCC9FC /* Reveal.framework */,
+			);
+			name = "UI调试";
+			sourceTree = "<group>";
+		};
 		C0DB280C1CDC38A700E67B1D /* ZXPUnicode(中外文编码) */ = {
 			isa = PBXGroup;
 			children = (
@@ -2382,6 +2391,7 @@
 		DF5C9EEF1CAE54BA00F6863B /* Libs(第三方插件) */ = {
 			isa = PBXGroup;
 			children = (
+				9BFF6A381D4709E700BCC9FC /* UI调试 */,
 				9B5D59F61D45A43300A8913B /* HKPieChartView(环形进度条) */,
 				9BAF17091D3CA03200DCA761 /* CoreLock(手势密码) */,
 				C0DB280C1CDC38A700E67B1D /* ZXPUnicode(中外文编码) */,
@@ -4831,6 +4841,7 @@
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/Extend/QQConnectSDK",
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK",
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/UI",
+					"$(PROJECT_DIR)/SP2P_6.1/Libs",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SP2P_6.1/SP2P_6.1-Prefix.pch";
@@ -4842,7 +4853,12 @@
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/Extend/WeChatSDK",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lai.lairongjinfu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -4869,6 +4885,7 @@
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/Extend/QQConnectSDK",
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK",
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/UI",
+					"$(PROJECT_DIR)/SP2P_6.1/Libs",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SP2P_6.1/SP2P_6.1-Prefix.pch";
@@ -4880,7 +4897,12 @@
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/Extend/WeChatSDK",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lai.lairongjinfu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -4944,6 +4966,7 @@
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/Extend/QQConnectSDK",
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK",
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/UI",
+					"$(PROJECT_DIR)/SP2P_6.1/Libs",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SP2P_6.1/SP2P_6.1-Prefix.pch";
@@ -4955,7 +4978,12 @@
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/Extend/SinaWeiboSDK",
 					"$(PROJECT_DIR)/SP2P_6.1/Libs/ShareSDK/Extend/WeChatSDK",
 				);
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lai.lairongjinfu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

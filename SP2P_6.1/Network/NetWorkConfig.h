@@ -23,9 +23,9 @@
 // 加密 key
 #define DESkey  @"fU4WhuDn8hAOGHmF"
 
-#define Baseurl   @"http://t.lai.cn"
+//#define Baseurl   @"http://t.lai.cn"
 
-//#define Baseurl   @"http://www.lai.cn"
+#define Baseurl   @"http://www.lai.cn"
 
 //#define Baseurl   @"http://192.168.3.53:8088/sp2p_jxlr"//测试服务器
 

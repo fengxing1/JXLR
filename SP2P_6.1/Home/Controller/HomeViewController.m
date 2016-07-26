@@ -298,15 +298,22 @@ bool isUpdate = YES;
     _viewContentNewBid=[[UIView alloc] init];
     _viewContentNewBid.backgroundColor=[UIColor clearColor];
     [_scrollContent addSubview:_viewContentNewBid];
+//
+//    _homeBid =[[HomeBid alloc] init];
+//    _homeBid.frame=CGRectMake(0, 0, WidthScreen, WidthScreen/1.1);
+//    [_homeBid.btnContent addTarget:self action:@selector(onClickBid) forControlEvents:UIControlEventTouchUpInside];
+//    [_homeBid.btnInvest addTarget:self action:@selector(onClickBid) forControlEvents:UIControlEventTouchUpInside];
+//    [_homeBid initContentBackground];
+//    [_viewContentNewBid addSubview:_homeBid];
     
-    _homeBid =[[HomeBid alloc] init];
-    _homeBid.frame=CGRectMake(0, 0, WidthScreen, WidthScreen/1.1);
+    _homeBid=[[HomeBid alloc]init];
+    _homeBid.frame=CGRectMake(0, CGRectGetMaxY(_viewInvestContentOne.frame)+SpaceMediumSmall, WidthScreen, HeightViewInvestContent);
     [_homeBid.btnContent addTarget:self action:@selector(onClickOneBid) forControlEvents:UIControlEventTouchUpInside];
     [_homeBid.btnInvest addTarget:self action:@selector(onClickOneBidButton) forControlEvents:UIControlEventTouchUpInside];
     [_homeBid initContentBackground];
     [_viewContentNewBid addSubview:_homeBid];
 
-    
+//    
 //    _viewInvestContentOne=[[ViewInvestContent alloc] init];
 //    _viewInvestContentOne.frame=CGRectMake(0, 0, WidthScreen, HeightViewInvestContent);
 //    [_viewInvestContentOne.btnContent addTarget:self action:@selector(onClickOneBid) forControlEvents:UIControlEventTouchUpInside];
@@ -321,7 +328,7 @@ bool isUpdate = YES;
 //    [_viewInvestContentTwo initContentBackground];
 //    [_viewContentNewBid addSubview:_viewInvestContentTwo];
     
-    _viewContentNewBid.frame=CGRectMake(0, CGRectGetMaxY(_btnAnnounceMent.frame)+SpaceMediumSmall, WidthScreen, CGRectGetMaxY(_viewInvestContentTwo.frame));
+    _viewContentNewBid.frame=CGRectMake(0, CGRectGetMaxY(_btnAnnounceMent.frame)+SpaceMediumSmall, WidthScreen, CGRectGetMaxY(_homeBid.frame));
     _viewContentNewBid.hidden=YES;
     
     //重新加载内容
@@ -366,6 +373,10 @@ bool isUpdate = YES;
     BorrowingDetailsView.stateNum = 0;
     BorrowingDetailsView.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:BorrowingDetailsView animated:YES];
+}
+
+-(void)onClickBid{
+    NSLog(@"============");
 }
 
 -(void)onClickOneBid{

@@ -71,8 +71,9 @@
     [self addSubview:viewLineOne];
     
     //投标进度
-    _pieChartView = [[HKPieChartView alloc] initWithFrame:CGRectMake((WidthScreen-HeightViewICenter*0.9)/2, CGRectGetMaxY(viewLineOne.frame),HeightViewICenter*0.9, HeightViewICenter*0.7)];
+    _pieChartView = [[HKPieChartView alloc] initWithFrame:CGRectMake((WidthScreen-HeightViewICenter*0.9)/2, CGRectGetMaxY(viewLineOne.frame),HeightViewICenter*0.9, HeightViewICenter*0.75)];
         [self addSubview:_pieChartView];
+    _pieChartView.userInteractionEnabled = NO;
     
     //年化利率
     _labAprNum=[[UILabel alloc] initWithFrame:CGRectMake(SpaceContentRight, CGRectGetMaxY(_pieChartView.frame),WidthAprAndPeriod, HeightAprAndPeriodAndAmount)];
@@ -117,13 +118,12 @@
     [_btnInvest.layer setCornerRadius:3.5f];
     _btnInvest.layer.masksToBounds=YES;
     [self addSubview:_btnInvest];
-
     
 }
 
 -(void)initContentBackground{
-    [self.btnContent setBackgroundImage:[ImageTools imageWithColor:ColorWhite] forState:UIControlStateNormal];
-    [self.btnContent setBackgroundImage:[ImageTools imageWithColor:ColorBtnWhiteHighlight] forState:UIControlStateHighlighted];
+    [_btnContent setBackgroundImage:[ImageTools imageWithColor:ColorWhite] forState:UIControlStateNormal];
+    [_btnContent setBackgroundImage:[ImageTools imageWithColor:ColorBtnWhiteHighlight] forState:UIControlStateHighlighted];
 }
 
 -(void)setInvestment:(Investment *)investment{
@@ -226,6 +226,9 @@
     }
 }
 
+-(void)onClickBid{
+    NSLog(@"=========");
+}
 
 
 @end
