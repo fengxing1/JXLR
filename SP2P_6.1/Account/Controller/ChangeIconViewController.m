@@ -17,6 +17,8 @@
 @interface ChangeIconViewController ()<UIActionSheetDelegate,UIAlertViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,HTTPClientDelegate>
 
 @property (nonatomic, strong) UIButton *iconView;
+@property (nonatomic,strong) UIButton *changeBtn;
+@property (nonatomic,strong) UIButton *yesBtn;
 @property (nonatomic, copy) NSString *logoStr;
 @property (nonatomic)UIImage *hearImg;
 @property(nonatomic ,strong) NetWorkClient *requestClient;
@@ -72,34 +74,34 @@
 {
      //头像
     _iconView = [UIButton buttonWithType:UIButtonTypeCustom];
-    _iconView.Frame = CGRectMake(self.view.frame.size.width * 0.5 - 50, SpaceBig, 100, 100);
+    _iconView.frame = CGRectMake(75, 75, WidthScreen-75*2, WidthScreen-75*2);
     [_iconView.layer setMasksToBounds:YES];
-    [_iconView.layer setCornerRadius:50.0]; //设置矩形四个圆角半径
+    [_iconView.layer setCornerRadius:(WidthScreen-75*2)/2]; //设置矩形四个圆角半径
     [_iconView addTarget:self action:@selector(changeIconClick) forControlEvents:UIControlEventTouchUpInside];
 //    [_iconView setBackgroundImageForState:UIControlStateNormal withURL:[NSURL URLWithString:_logoStr]];
     [_iconView sd_setBackgroundImageWithURL:[NSURL URLWithString:_logoStr]forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"news_image_default"]];
     [self.view addSubview:_iconView];// 登陆头像
     
-    UIButton *changeBut = [UIButton buttonWithType:UIButtonTypeCustom];
-    changeBut.frame = CGRectMake(self.view.frame.size.width * 0.5 - 75, CGRectGetMaxY(_iconView.frame)+SpaceMediumSmall, 150, 35);
-    changeBut.backgroundColor = GreenColor;
-    [changeBut setTitle:@"选择图片" forState:UIControlStateNormal];
-    changeBut.titleLabel.font = [UIFont fontWithName:@"Arial" size:14.0];
-    [changeBut.layer setMasksToBounds:YES];
-    [changeBut.layer setCornerRadius:6.0]; //设置矩形四个圆角半径
-    [changeBut addTarget:self action:@selector(changeIconClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:changeBut];
+    _changeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _changeBtn.frame = CGRectMake(self.view.frame.size.width * 0.5 - 75, CGRectGetMaxY(_iconView.frame)+SpaceMediumSmall, 150, 35);
+    _changeBtn.backgroundColor = GreenColor;
+    [_changeBtn setTitle:@"选择图片" forState:UIControlStateNormal];
+    _changeBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:14.0];
+    [_changeBtn.layer setMasksToBounds:YES];
+    [_changeBtn.layer setCornerRadius:6.0]; //设置矩形四个圆角半径
+    [_changeBtn addTarget:self action:@selector(changeIconClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_changeBtn];
     
     
-    UIButton *yesBut = [UIButton buttonWithType:UIButtonTypeCustom];
-    yesBut.frame = CGRectMake(self.view.frame.size.width * 0.5 - 75, CGRectGetMaxY(changeBut.frame)+SpaceMediumSmall, 150, 35);
-    yesBut.backgroundColor = PinkColor;
-    [yesBut setTitle:@"上 传" forState:UIControlStateNormal];
-    yesBut.titleLabel.font = [UIFont fontWithName:@"Arial" size:14.0];
-    [yesBut.layer setMasksToBounds:YES];
-    [yesBut.layer setCornerRadius:6.0]; //设置矩形四个圆角半径
-    [yesBut addTarget:self action:@selector(yesCLick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:yesBut];
+    _yesBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _yesBtn.frame = CGRectMake(self.view.frame.size.width * 0.5 - 75, CGRectGetMaxY(_changeBtn.frame)+SpaceMediumSmall, 150, 35);
+    _yesBtn.backgroundColor = ColorCheckButtonGray;  //不可用背景
+    [_yesBtn setTitle:@"上 传" forState:UIControlStateNormal];
+    _yesBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:14.0];
+    [_yesBtn.layer setMasksToBounds:YES];
+    [_yesBtn.layer setCornerRadius:6.0]; //设置矩形四个圆角半径
+    [_yesBtn addTarget:self action:@selector(yesCLick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_yesBtn];
 }
 
 #pragma mark CLick 上传按钮
@@ -153,6 +155,7 @@
 #pragma mark - UIImagePicker delegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    _yesBtn.backgroundColor = PinkColor;
     [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     [self performSelector:@selector(saveImage:) withObject:image afterDelay:0.5];

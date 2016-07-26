@@ -154,7 +154,10 @@
         }
         
         //标题
-        _labTitle.text = investment.title;
+        _labTitle.text = _investment.title;
+        
+        //刷新进度条
+        [_pieChartView updatePercent:_investment.progress animation:YES];
         
         //年化利率
         NSString *strApr = [NSString stringWithFormat:@"%0.1f%%",_investment.rate];
@@ -198,7 +201,7 @@
         [attrStrPeriod addAttribute:NSFontAttributeName value:FontContentSmall range:NSMakeRange(numberPeriod, lenghtPeriod)];
         _labPeriod.attributedText=attrStrPeriod;
         
-        [_pieChartView updatePercent:_investment.progress animation:YES];
+        
         
         if(_investment.status==1||_investment.status==2||_investment.status==3){
             if(_investment.progress<100.0){

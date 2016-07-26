@@ -375,10 +375,6 @@ bool isUpdate = YES;
     [self.navigationController pushViewController:BorrowingDetailsView animated:YES];
 }
 
--(void)onClickBid{
-    NSLog(@"============");
-}
-
 -(void)onClickOneBid{
     if([self.arrayNewBidData count]>0){
         [self showNewBidDetails:[self.arrayNewBidData objectAtIndex:0]];

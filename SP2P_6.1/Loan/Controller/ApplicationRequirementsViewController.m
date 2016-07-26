@@ -5,7 +5,7 @@
 //  Created by Jerry on 14-7-3.
 //  Copyright (c) 2014年 EIMS. All rights reserved.
 //
-//借款申请条件
+//  －－借款申请条件－－
 #import "ApplicationRequirementsViewController.h"
 #import "ColorTools.h"
 @interface ApplicationRequirementsViewController ()

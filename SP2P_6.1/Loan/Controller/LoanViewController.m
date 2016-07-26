@@ -235,7 +235,9 @@
     creditBorrowingScaleView.productId = loanModel.ID;
     creditBorrowingScaleView.titleStr = loanModel.name;
     creditBorrowingScaleView.hidesBottomBarWhenPushed = YES;
-    [self presentViewOrPushController:creditBorrowingScaleView animated:YES completion:nil withNewNavgation:YES];
+    //[self presentViewOrPushController:creditBorrowingScaleView animated:YES completion:nil withNewNavgation:YES];
+    
+    [self.navigationController pushViewController:creditBorrowingScaleView animated:YES];
 }
 
 -(void) viewWillDisappear:(BOOL)animated

@@ -399,7 +399,9 @@ extern NSString *headertitle;
     BorrowingDetailsView.timeString = object.time;
     BorrowingDetailsView.stateNum = 0;
     BorrowingDetailsView.HidesBottomBarWhenPushed = YES;
-    [self presentViewOrPushController:BorrowingDetailsView animated:YES completion:nil withNewNavgation:YES];
+    //[self presentViewOrPushController:BorrowingDetailsView animated:YES completion:nil withNewNavgation:YES];
+    
+    [self.navigationController pushViewController:BorrowingDetailsView animated:YES];
 }
 
 // 隐藏刷新视图

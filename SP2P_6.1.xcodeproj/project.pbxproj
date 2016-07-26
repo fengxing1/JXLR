@@ -1633,16 +1633,16 @@
 		4354B28319419FAE00B2C2A5 /* SP2P_6.1 */ = {
 			isa = PBXGroup;
 			children = (
-				DF5C9CD01CAE54BA00F6863B /* Account(账户) */,
-				DF5C9E3E1CAE54BA00F6863B /* Controller(未整理的控制器) */,
-				DF5C9E6C1CAE54BA00F6863B /* Financial(理财) */,
 				DF5C9EAA1CAE54BA00F6863B /* General(通用) */,
 				DF5C9EDF1CAE54BA00F6863B /* Home(首页) */,
-				DF5C9EEF1CAE54BA00F6863B /* Libs(第三方插件) */,
+				DF5C9E6C1CAE54BA00F6863B /* Financial(理财) */,
 				DF5CA0041CAE54BB00F6863B /* Loan(借款) */,
-				DF5CA01C1CAE54BB00F6863B /* Model(未整理的模型) */,
+				DF5C9CD01CAE54BA00F6863B /* Account(账户) */,
+				DF5C9EEF1CAE54BA00F6863B /* Libs(第三方插件) */,
 				DF5CA0AE1CAE54BB00F6863B /* Network(网络管理) */,
+				DF5C9E3E1CAE54BA00F6863B /* Controller(未整理的控制器) */,
 				DF5CA0BF1CAE54BB00F6863B /* View(未整理的视图) */,
+				DF5CA01C1CAE54BB00F6863B /* Model(未整理的模型) */,
 				432487941946E13D00190466 /* Resource(引导界面资源） */,
 				4354B28419419FAE00B2C2A5 /* Supporting Files */,
 			);
@@ -2101,20 +2101,21 @@
 			children = (
 				DF5C9E6D1CAE54BA00F6863B /* FinancialViewController.h */,
 				DF5C9E6E1CAE54BA00F6863B /* FinancialViewController.m */,
-				DF5C9E6F1CAE54BA00F6863B /* Inverst */,
-				DF5C9E961CAE54BA00F6863B /* Transfer */,
+				DF5C9E6F1CAE54BA00F6863B /* Inverst(我要投资) */,
+				DF5C9E961CAE54BA00F6863B /* Transfer(债券转让) */,
 			);
 			name = "Financial(理财)";
 			path = Financial;
 			sourceTree = "<group>";
 		};
-		DF5C9E6F1CAE54BA00F6863B /* Inverst */ = {
+		DF5C9E6F1CAE54BA00F6863B /* Inverst(我要投资) */ = {
 			isa = PBXGroup;
 			children = (
 				DF5C9E701CAE54BA00F6863B /* Controller */,
 				DF5C9E8C1CAE54BA00F6863B /* Model */,
 				DF5C9E8F1CAE54BA00F6863B /* View */,
 			);
+			name = "Inverst(我要投资)";
 			path = Inverst;
 			sourceTree = "<group>";
 		};
@@ -2183,13 +2184,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DF5C9E961CAE54BA00F6863B /* Transfer */ = {
+		DF5C9E961CAE54BA00F6863B /* Transfer(债券转让) */ = {
 			isa = PBXGroup;
 			children = (
 				DF5C9E971CAE54BA00F6863B /* Controller */,
 				DF5C9EA41CAE54BA00F6863B /* Model */,
 				DF5C9EA71CAE54BA00F6863B /* View */,
 			);
+			name = "Transfer(债券转让)";
 			path = Transfer;
 			sourceTree = "<group>";
 		};
