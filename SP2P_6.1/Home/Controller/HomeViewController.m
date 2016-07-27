@@ -31,7 +31,7 @@
 #define HeightImageMore 17
 #define HeightBtnReConnect 35 //重新加载按钮高度
 #define WidthBtnReConnect 110 //重新加载按钮宽度
-#define HeightContentScroller (HeightScreen-HeightNavigationAndStateBar-HeightTabBar+SpaceMediumSmall)
+#define HeightContentScroller (HeightScreen-HeightNavigationAndStateBar-HeightTabBar)
 
 @interface HomeViewController ()<FocusImageFrameDelegate,FocusMessageFrameDelegate>
 {
@@ -79,7 +79,8 @@
     [self initView];
 }
 
--(void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated
+{
     self.navgationState=NavgationStateWhiteNotBack;
     [super viewWillAppear:animated];
     [self requestData];
@@ -87,6 +88,8 @@
     //升级检测
     [self upload];
 }
+
+
 - (void)readAdData
 {
     NSMutableArray *itemArray = [NSMutableArray arrayWithCapacity:_tempArrays.count+2];

@@ -31,7 +31,7 @@
 #define HeightContentHeader (WidthScreen*0.40)//不包括StateBar
 #define HeightContentCenter (WidthScreen*0.22)//中间数据界面
 #define HeightContentNumber (WidthScreen*0.25)//底部三个按钮容器高度
-#define HeightHeaderTable (HeightContentHeader+HeightContentCenter+HeightContentNumber+HeightStateBar)
+#define HeightHeaderTable (HeightContentHeader+HeightContentCenter+HeightStateBar)
 #define WHHeader 65
 #define FontNameAndAumu FontTextContent
 #define FontUserName [UIFont boldSystemFontOfSize:16]
@@ -114,11 +114,25 @@
     }
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    self.navgationState=NavgationStateHide;
+#pragma mark 导航栏动画消失或显示
+//Jaqen-start:导航栏消失随动画
+
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
-    [self requestData];
+    
+    // 隐藏导航栏
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    
+    // 隐藏导航栏
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+//Jaqen-end;
 
 /**
  * 初始化数据
@@ -257,7 +271,7 @@
     
     UIView *viewBottom=[[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_imageViewBG.frame), WidthScreen, HeightContentNumber)];
     viewBottom.backgroundColor=ColorWhite;
-    [_viewTableHeader addSubview:viewBottom];
+    //[_viewTableHeader addSubview:viewBottom];
     
     float spaceButton=(WidthScreen-WidthCenterButton*3)/6;
     _controlReturn=[[ControlImageTitle alloc] initWithFrame:CGRectMake(spaceButton, SpaceMediumSmall, WidthCenterButton, WidthCenterButton) withTitle:@"还款" withImage:[UIImage imageNamed:@"return"] withColor:ColorReturn addTarget:self action:@selector(returnClick)];
@@ -269,14 +283,14 @@
     _controlWithdrawal=[[ControlImageTitle alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_controlTopup.frame)+spaceButton*2, CGRectGetMinY(_controlReturn.frame), WidthCenterButton, WidthCenterButton) withTitle:@"提现" withImage:[UIImage imageNamed:@"withdrawal"] withColor:ColorWitdrawal addTarget:self action:@selector(withdrawClick)];
     [viewBottom addSubview:_controlWithdrawal];
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WidthScreen, CGRectGetHeight(self.view.frame)) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_viewTableHeader.frame), WidthScreen, HeightScreen-CGRectGetMaxY(_viewTableHeader.frame)) style:UITableViewStyleGrouped];
     [_tableView setScrollIndicatorInsets:UIEdgeInsetsMake(0, 0, HeightTabBar, 0)];
     [_tableView setContentInset:UIEdgeInsetsMake(0, 0, HeightTabBar, 0)];
     _tableView.contentSize=CGSizeMake(WidthScreen, CGRectGetHeight(self.view.frame));
     _tableView.showsVerticalScrollIndicator = NO;
     _tableView.dataSource = self;
     _tableView.delegate = self;
-    _tableView.tableHeaderView=_viewTableHeader;
+    _tableView.tableHeaderView=viewBottom;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.bounces=NO;
     [self.view addSubview:_tableView];

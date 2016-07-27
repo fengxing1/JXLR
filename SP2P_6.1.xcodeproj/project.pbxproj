@@ -1056,8 +1056,8 @@
 		DF5CA0171CAE54BB00F6863B /* RequirementsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequirementsView.m; sourceTree = "<group>"; };
 		DF5CA01A1CAE54BB00F6863B /* LoanTypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoanTypeTableViewCell.h; sourceTree = "<group>"; };
 		DF5CA01B1CAE54BB00F6863B /* LoanTypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoanTypeTableViewCell.m; sourceTree = "<group>"; };
-		DF5CA01D1CAE54BB00F6863B /* AccountCenterOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCenterOrder.h; sourceTree = "<group>"; };
-		DF5CA01E1CAE54BB00F6863B /* AccountCenterOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCenterOrder.m; sourceTree = "<group>"; };
+		DF5CA01D1CAE54BB00F6863B /* AccountCenterOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountCenterOrder.h; path = ../../../Model/AccountCenterOrder.h; sourceTree = "<group>"; };
+		DF5CA01E1CAE54BB00F6863B /* AccountCenterOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountCenterOrder.m; path = ../../../Model/AccountCenterOrder.m; sourceTree = "<group>"; };
 		DF5CA0211CAE54BB00F6863B /* AccountInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountInfo.h; sourceTree = "<group>"; };
 		DF5CA0221CAE54BB00F6863B /* AccountInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountInfo.m; sourceTree = "<group>"; };
 		DF5CA0231CAE54BB00F6863B /* AccountItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountItem.h; sourceTree = "<group>"; };
@@ -1102,12 +1102,12 @@
 		DF5CA0521CAE54BB00F6863B /* CollectionObligation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionObligation.m; sourceTree = "<group>"; };
 		DF5CA0551CAE54BB00F6863B /* WithdrawRecords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawRecords.h; sourceTree = "<group>"; };
 		DF5CA0561CAE54BB00F6863B /* WithdrawRecords.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawRecords.m; sourceTree = "<group>"; };
-		DF5CA0571CAE54BB00F6863B /* AdvertiseGallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertiseGallery.h; sourceTree = "<group>"; };
-		DF5CA0581CAE54BB00F6863B /* AdvertiseGallery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertiseGallery.m; sourceTree = "<group>"; };
-		DF5CA0591CAE54BB00F6863B /* AuctionRecordTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuctionRecordTwo.h; sourceTree = "<group>"; };
-		DF5CA05A1CAE54BB00F6863B /* AuctionRecordTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuctionRecordTwo.m; sourceTree = "<group>"; };
-		DF5CA05B1CAE54BB00F6863B /* BankCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardInfo.h; sourceTree = "<group>"; };
-		DF5CA05C1CAE54BB00F6863B /* BankCardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardInfo.m; sourceTree = "<group>"; };
+		DF5CA0571CAE54BB00F6863B /* AdvertiseGallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdvertiseGallery.h; path = ../../Model/AdvertiseGallery.h; sourceTree = "<group>"; };
+		DF5CA0581CAE54BB00F6863B /* AdvertiseGallery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdvertiseGallery.m; path = ../../Model/AdvertiseGallery.m; sourceTree = "<group>"; };
+		DF5CA0591CAE54BB00F6863B /* AuctionRecordTwo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuctionRecordTwo.h; path = ../../../Model/AuctionRecordTwo.h; sourceTree = "<group>"; };
+		DF5CA05A1CAE54BB00F6863B /* AuctionRecordTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuctionRecordTwo.m; path = ../../../Model/AuctionRecordTwo.m; sourceTree = "<group>"; };
+		DF5CA05B1CAE54BB00F6863B /* BankCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BankCardInfo.h; path = ../../BankCardInfo.h; sourceTree = "<group>"; };
+		DF5CA05C1CAE54BB00F6863B /* BankCardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BankCardInfo.m; path = ../../BankCardInfo.m; sourceTree = "<group>"; };
 		DF5CA05F1CAE54BB00F6863B /* Auditing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Auditing.h; sourceTree = "<group>"; };
 		DF5CA0601CAE54BB00F6863B /* Auditing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Auditing.m; sourceTree = "<group>"; };
 		DF5CA0621CAE54BB00F6863B /* BillDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillDetail.h; sourceTree = "<group>"; };
@@ -1138,14 +1138,14 @@
 		DF5CA0811CAE54BB00F6863B /* CreditorTransfer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditorTransfer.m; sourceTree = "<group>"; };
 		DF5CA0821CAE54BB00F6863B /* DebtManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebtManagement.h; sourceTree = "<group>"; };
 		DF5CA0831CAE54BB00F6863B /* DebtManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebtManagement.m; sourceTree = "<group>"; };
-		DF5CA0841CAE54BB00F6863B /* FinancialBills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialBills.h; sourceTree = "<group>"; };
-		DF5CA0851CAE54BB00F6863B /* FinancialBills.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialBills.m; sourceTree = "<group>"; };
-		DF5CA0861CAE54BB00F6863B /* FinancialComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialComplete.h; sourceTree = "<group>"; };
-		DF5CA0871CAE54BB00F6863B /* FinancialComplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialComplete.m; sourceTree = "<group>"; };
-		DF5CA0881CAE54BB00F6863B /* FinancialReceivables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialReceivables.h; sourceTree = "<group>"; };
-		DF5CA0891CAE54BB00F6863B /* FinancialReceivables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialReceivables.m; sourceTree = "<group>"; };
-		DF5CA08A1CAE54BB00F6863B /* FinancialStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinancialStatistics.h; sourceTree = "<group>"; };
-		DF5CA08B1CAE54BB00F6863B /* FinancialStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinancialStatistics.m; sourceTree = "<group>"; };
+		DF5CA0841CAE54BB00F6863B /* FinancialBills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinancialBills.h; path = ../FinancialBills.h; sourceTree = "<group>"; };
+		DF5CA0851CAE54BB00F6863B /* FinancialBills.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinancialBills.m; path = ../FinancialBills.m; sourceTree = "<group>"; };
+		DF5CA0861CAE54BB00F6863B /* FinancialComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinancialComplete.h; path = ../FinancialComplete.h; sourceTree = "<group>"; };
+		DF5CA0871CAE54BB00F6863B /* FinancialComplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinancialComplete.m; path = ../FinancialComplete.m; sourceTree = "<group>"; };
+		DF5CA0881CAE54BB00F6863B /* FinancialReceivables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinancialReceivables.h; path = ../FinancialReceivables.h; sourceTree = "<group>"; };
+		DF5CA0891CAE54BB00F6863B /* FinancialReceivables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinancialReceivables.m; path = ../FinancialReceivables.m; sourceTree = "<group>"; };
+		DF5CA08A1CAE54BB00F6863B /* FinancialStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinancialStatistics.h; path = ../FinancialStatistics.h; sourceTree = "<group>"; };
+		DF5CA08B1CAE54BB00F6863B /* FinancialStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinancialStatistics.m; path = ../FinancialStatistics.m; sourceTree = "<group>"; };
 		DF5CA08C1CAE54BB00F6863B /* Income.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Income.h; sourceTree = "<group>"; };
 		DF5CA08D1CAE54BB00F6863B /* Income.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Income.m; sourceTree = "<group>"; };
 		DF5CA08E1CAE54BB00F6863B /* IntegralDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegralDetail.h; sourceTree = "<group>"; };
@@ -1664,6 +1664,29 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9B13D3B81D489BB100C4D2DA /* Fianncial(财务信息) */ = {
+			isa = PBXGroup;
+			children = (
+				DF5CA0841CAE54BB00F6863B /* FinancialBills.h */,
+				DF5CA0851CAE54BB00F6863B /* FinancialBills.m */,
+				DF5CA0861CAE54BB00F6863B /* FinancialComplete.h */,
+				DF5CA0871CAE54BB00F6863B /* FinancialComplete.m */,
+				DF5CA0881CAE54BB00F6863B /* FinancialReceivables.h */,
+				DF5CA0891CAE54BB00F6863B /* FinancialReceivables.m */,
+				DF5CA08A1CAE54BB00F6863B /* FinancialStatistics.h */,
+				DF5CA08B1CAE54BB00F6863B /* FinancialStatistics.m */,
+			);
+			name = "Fianncial(财务信息)";
+			sourceTree = "<group>";
+		};
+		9B13D3B91D489C8E00C4D2DA /* UserInfo(用户) */ = {
+			isa = PBXGroup;
+			children = (
+				DF5CA02C1CAE54BB00F6863B /* AttentionUser(关联用户) */,
+			);
+			name = "UserInfo(用户)";
+			sourceTree = "<group>";
+		};
 		9B5D59F61D45A43300A8913B /* HKPieChartView(环形进度条) */ = {
 			isa = PBXGroup;
 			children = (
@@ -1830,9 +1853,9 @@
 			children = (
 				DF5C9DDD1CAE54BA00F6863B /* AccountManager（账户管理） */,
 				DF5C9DEB1CAE54BA00F6863B /* BorrowManager（借款管理） */,
-				DF5C9DF91CAE54BA00F6863B /* Controller */,
 				DF5C9E0C1CAE54BA00F6863B /* InvestManager（投资管理） */,
 				DF5C9E1E1CAE54BA00F6863B /* Login(登录) */,
+				DF5C9DF91CAE54BA00F6863B /* Controller */,
 				DF5C9E361CAE54BA00F6863B /* Model */,
 				DF5C9E371CAE54BA00F6863B /* View */,
 			);
@@ -1871,6 +1894,11 @@
 		DF5C9DE91CAE54BA00F6863B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF5CA01D1CAE54BB00F6863B /* AccountCenterOrder.h */,
+				DF5CA01E1CAE54BB00F6863B /* AccountCenterOrder.m */,
+				DF5CA0591CAE54BB00F6863B /* AuctionRecordTwo.h */,
+				DF5CA05A1CAE54BB00F6863B /* AuctionRecordTwo.m */,
+				DF5CA01F1CAE54BB00F6863B /* AccountManage */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2378,6 +2406,8 @@
 		DF5C9EE51CAE54BA00F6863B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF5CA0571CAE54BB00F6863B /* AdvertiseGallery.h */,
+				DF5CA0581CAE54BB00F6863B /* AdvertiseGallery.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3054,15 +3084,6 @@
 		DF5CA01C1CAE54BB00F6863B /* Model(未整理的模型) */ = {
 			isa = PBXGroup;
 			children = (
-				DF5CA01D1CAE54BB00F6863B /* AccountCenterOrder.h */,
-				DF5CA01E1CAE54BB00F6863B /* AccountCenterOrder.m */,
-				DF5CA01F1CAE54BB00F6863B /* AccountManage */,
-				DF5CA0571CAE54BB00F6863B /* AdvertiseGallery.h */,
-				DF5CA0581CAE54BB00F6863B /* AdvertiseGallery.m */,
-				DF5CA0591CAE54BB00F6863B /* AuctionRecordTwo.h */,
-				DF5CA05A1CAE54BB00F6863B /* AuctionRecordTwo.m */,
-				DF5CA05B1CAE54BB00F6863B /* BankCardInfo.h */,
-				DF5CA05C1CAE54BB00F6863B /* BankCardInfo.m */,
 				DF5CA05D1CAE54BB00F6863B /* BorrowManage */,
 				DF5CA0781CAE54BB00F6863B /* Calculator */,
 				DF5CA07E1CAE54BB00F6863B /* Collection.h */,
@@ -3071,14 +3092,6 @@
 				DF5CA0811CAE54BB00F6863B /* CreditorTransfer.m */,
 				DF5CA0821CAE54BB00F6863B /* DebtManagement.h */,
 				DF5CA0831CAE54BB00F6863B /* DebtManagement.m */,
-				DF5CA0841CAE54BB00F6863B /* FinancialBills.h */,
-				DF5CA0851CAE54BB00F6863B /* FinancialBills.m */,
-				DF5CA0861CAE54BB00F6863B /* FinancialComplete.h */,
-				DF5CA0871CAE54BB00F6863B /* FinancialComplete.m */,
-				DF5CA0881CAE54BB00F6863B /* FinancialReceivables.h */,
-				DF5CA0891CAE54BB00F6863B /* FinancialReceivables.m */,
-				DF5CA08A1CAE54BB00F6863B /* FinancialStatistics.h */,
-				DF5CA08B1CAE54BB00F6863B /* FinancialStatistics.m */,
 				DF5CA08C1CAE54BB00F6863B /* Income.h */,
 				DF5CA08D1CAE54BB00F6863B /* Income.m */,
 				DF5CA08E1CAE54BB00F6863B /* IntegralDetail.h */,
@@ -3119,22 +3132,24 @@
 		DF5CA01F1CAE54BB00F6863B /* AccountManage */ = {
 			isa = PBXGroup;
 			children = (
-				DF5CA0201CAE54BB00F6863B /* AccountInfo */,
-				DF5CA0251CAE54BB00F6863B /* AccountSafe */,
-				DF5CA02C1CAE54BB00F6863B /* AttentionUser */,
-				DF5CA0311CAE54BB00F6863B /* BankCardManage */,
-				DF5CA0341CAE54BB00F6863B /* BlackList */,
-				DF5CA0371CAE54BB00F6863B /* CreditLevel */,
+				9B13D3B91D489C8E00C4D2DA /* UserInfo(用户) */,
+				9B13D3B81D489BB100C4D2DA /* Fianncial(财务信息) */,
+				DF5CA0201CAE54BB00F6863B /* AccountInfo(账户信息) */,
+				DF5CA0251CAE54BB00F6863B /* AccountSafe(账户安全) */,
+				DF5CA0311CAE54BB00F6863B /* BankCardManage(银行卡) */,
+				DF5CA0341CAE54BB00F6863B /* BlackList(黑名单) */,
+				DF5CA0371CAE54BB00F6863B /* CreditLevel(信用等级) */,
 				DF5CA04A1CAE54BB00F6863B /* FundRecord */,
 				DF5CA04D1CAE54BB00F6863B /* MobilePassword */,
 				DF5CA04E1CAE54BB00F6863B /* MyCollection */,
 				DF5CA0531CAE54BB00F6863B /* Recharge */,
 				DF5CA0541CAE54BB00F6863B /* Withdraw */,
 			);
-			path = AccountManage;
+			name = AccountManage;
+			path = ../../../Model/AccountManage;
 			sourceTree = "<group>";
 		};
-		DF5CA0201CAE54BB00F6863B /* AccountInfo */ = {
+		DF5CA0201CAE54BB00F6863B /* AccountInfo(账户信息) */ = {
 			isa = PBXGroup;
 			children = (
 				DF5CA0211CAE54BB00F6863B /* AccountInfo.h */,
@@ -3142,10 +3157,11 @@
 				DF5CA0231CAE54BB00F6863B /* AccountItem.h */,
 				DF5CA0241CAE54BB00F6863B /* AccountItem.m */,
 			);
+			name = "AccountInfo(账户信息)";
 			path = AccountInfo;
 			sourceTree = "<group>";
 		};
-		DF5CA0251CAE54BB00F6863B /* AccountSafe */ = {
+		DF5CA0251CAE54BB00F6863B /* AccountSafe(账户安全) */ = {
 			isa = PBXGroup;
 			children = (
 				DF5CA0261CAE54BB00F6863B /* SafeEmail.h */,
@@ -3155,10 +3171,11 @@
 				DF5CA02A1CAE54BB00F6863B /* SafeQuestion.h */,
 				DF5CA02B1CAE54BB00F6863B /* SafeQuestion.m */,
 			);
+			name = "AccountSafe(账户安全)";
 			path = AccountSafe;
 			sourceTree = "<group>";
 		};
-		DF5CA02C1CAE54BB00F6863B /* AttentionUser */ = {
+		DF5CA02C1CAE54BB00F6863B /* AttentionUser(关联用户) */ = {
 			isa = PBXGroup;
 			children = (
 				DF5CA02D1CAE54BB00F6863B /* AttentionUser.h */,
@@ -3166,28 +3183,33 @@
 				DF5CA02F1CAE54BB00F6863B /* OtherAttentionUser.h */,
 				DF5CA0301CAE54BB00F6863B /* OtherAttentionUser.m */,
 			);
+			name = "AttentionUser(\U0010关联用户)";
 			path = AttentionUser;
 			sourceTree = "<group>";
 		};
-		DF5CA0311CAE54BB00F6863B /* BankCardManage */ = {
+		DF5CA0311CAE54BB00F6863B /* BankCardManage(银行卡) */ = {
 			isa = PBXGroup;
 			children = (
 				DF5CA0321CAE54BB00F6863B /* BankCard.h */,
 				DF5CA0331CAE54BB00F6863B /* BankCard.m */,
+				DF5CA05B1CAE54BB00F6863B /* BankCardInfo.h */,
+				DF5CA05C1CAE54BB00F6863B /* BankCardInfo.m */,
 			);
+			name = "BankCardManage(银行卡)";
 			path = BankCardManage;
 			sourceTree = "<group>";
 		};
-		DF5CA0341CAE54BB00F6863B /* BlackList */ = {
+		DF5CA0341CAE54BB00F6863B /* BlackList(黑名单) */ = {
 			isa = PBXGroup;
 			children = (
 				DF5CA0351CAE54BB00F6863B /* BlackList.h */,
 				DF5CA0361CAE54BB00F6863B /* BlackList.m */,
 			);
+			name = "BlackList(黑名单)";
 			path = BlackList;
 			sourceTree = "<group>";
 		};
-		DF5CA0371CAE54BB00F6863B /* CreditLevel */ = {
+		DF5CA0371CAE54BB00F6863B /* CreditLevel(信用等级) */ = {
 			isa = PBXGroup;
 			children = (
 				DF5CA0381CAE54BB00F6863B /* ApplyRecord.h */,
@@ -3209,6 +3231,7 @@
 				DF5CA0481CAE54BB00F6863B /* SuccessfulTenderIntegral.h */,
 				DF5CA0491CAE54BB00F6863B /* SuccessfulTenderIntegral.m */,
 			);
+			name = "CreditLevel(信用等级)";
 			path = CreditLevel;
 			sourceTree = "<group>";
 		};

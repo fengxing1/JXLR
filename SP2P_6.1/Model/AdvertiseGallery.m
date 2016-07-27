@@ -22,7 +22,7 @@
         self.idStr = idStr;
         
         //test
-        self.urlStr=@"http://www.baidu.com";
+        //self.urlStr=@"http://www.baidu.com";
     }
     return self;
 }

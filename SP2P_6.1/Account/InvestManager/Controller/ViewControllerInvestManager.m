@@ -27,6 +27,7 @@
     [self initView];
 }
 
+
 -(void)initData{
     self.arrayItem=@[@"投资记录",@"等待满标",@"收款中",@"已完成",@"理财统计"];
     self.arrayItemPicture=@[@"menu_invest_1",@"menu_invest_2",@"menu_invest_3"

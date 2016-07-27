@@ -100,10 +100,12 @@
  */
 - (void)initNavigationBar
 {
-    self.title = @"取现银行卡管理";
+    self.title = @"我的银行卡";
     
     // 导航条右边按钮
     BarButtonItem *AddItem=[BarButtonItem barItemRightDefaultWithTitle:@"添加" target:self action:@selector(addClick)];
+    
+    //[BarButtonItem barItemWithImage:[UIImage imageNamed:@"add_bankcard"] selectedImage:[UIImage imageNamed:@"add_bankcard"] target:self action:@selector(addClick)];
     [self.navigationItem setRightBarButtonItem:AddItem];
 }
 

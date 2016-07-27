@@ -424,6 +424,8 @@
     
     CLLockNavVC *navVC = [[CLLockNavVC alloc] initWithRootViewController:lockVC];
     
+    [navVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    
     [vc presentViewController:navVC animated:YES completion:nil];
 
     
