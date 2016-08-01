@@ -25,6 +25,7 @@
 #import "LiteratureAuditViewController.h"
 #import "BorrowingBillViewController.h"
 #import "FinancialBillsViewController.h"
+#import "HJImageView.h"
 
 #define HeightContentTitle (WidthScreen*0.22)
 #define HeightContentNumber (WidthScreen*0.25)
@@ -921,8 +922,18 @@
         case 2:
         {
             MaterialAuditSubjectViewController *MaterialAuditSubjectView = [[MaterialAuditSubjectViewController alloc] init];
-            MaterialAuditSubjectView.view.frame = CGRectMake(0, 0, 1000, [_AuditdataArr count]*35+20);
+            //MaterialAuditSubjectView.view.frame = CGRectMake(0, 0, 1000, [_AuditdataArr count]*35+20);
+             MaterialAuditSubjectView.view.frame = CGRectMake(0, 0, WidthScreen,(WidthScreen-SpaceMediumBig*2-SpaceSmall*4)/5+SpaceBig*2);
             
+            //查看审核图片
+            HJImageView *imageView = [[HJImageView alloc] init];
+            imageView.frame = MaterialAuditSubjectView.view.bounds;
+            
+            [imageView initViewWithUrls:_imgpathArr andTitles:_AuditdataArr];
+            
+            [MaterialAuditSubjectView.view addSubview:imageView];
+
+            /*
             if (_AuditdataArr.count) {
                 for (int i = 0; i<[_AuditdataArr count]; i++) {
                     
@@ -1007,7 +1018,7 @@
                 
             }
             
-            
+            */
             [folderTableView openFolderAtIndexPath:indexPath WithContentView:MaterialAuditSubjectView.view
                                          openBlock:^(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction){
                                              btn.selected = !btn.selected;

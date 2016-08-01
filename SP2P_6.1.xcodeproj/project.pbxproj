@@ -30,6 +30,16 @@
 		9B5D59F91D45A46600A8913B /* HKPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D59F81D45A46600A8913B /* HKPieChartView.m */; };
 		9B5D5A3B1D45E6E700A8913B /* HomeBid.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5D5A3A1D45E6E700A8913B /* HomeBid.m */; };
 		9B9856DC1D3DBB200078AE5D /* GestureManagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9856DB1D3DBB200078AE5D /* GestureManagerController.m */; };
+		9BA795A41D4F3674005830BE /* NSString+XHMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA7958D1D4F3674005830BE /* NSString+XHMD5.m */; };
+		9BA795A51D4F3674005830BE /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA7958F1D4F3674005830BE /* UIImage+Utility.m */; };
+		9BA795A61D4F3674005830BE /* UIImageView+XHURLDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA795911D4F3674005830BE /* UIImageView+XHURLDownload.m */; };
+		9BA795A71D4F3674005830BE /* XHCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA795941D4F3674005830BE /* XHCacheManager.m */; };
+		9BA795A81D4F3674005830BE /* XHFileAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA795961D4F3674005830BE /* XHFileAttribute.m */; };
+		9BA795A91D4F3674005830BE /* HJImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA7959B1D4F3674005830BE /* HJImageView.m */; };
+		9BA795AA1D4F3674005830BE /* XHBottomToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA7959D1D4F3674005830BE /* XHBottomToolBar.m */; };
+		9BA795AB1D4F3674005830BE /* XHImageViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA7959F1D4F3674005830BE /* XHImageViewer.m */; };
+		9BA795AC1D4F3674005830BE /* XHViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA795A11D4F3674005830BE /* XHViewState.m */; };
+		9BA795AD1D4F3674005830BE /* XHZoomingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA795A31D4F3674005830BE /* XHZoomingImageView.m */; };
 		9BAF16FF1D3CA00300DCA761 /* CLLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF16E81D3CA00300DCA761 /* CLLockVC.m */; };
 		9BAF17001D3CA00300DCA761 /* CLLockVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BAF16E91D3CA00300DCA761 /* CLLockVC.xib */; };
 		9BAF17011D3CA00300DCA761 /* CALayer+Anim.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAF16ED1D3CA00300DCA761 /* CALayer+Anim.m */; };
@@ -552,6 +562,27 @@
 		9B5D5A3A1D45E6E700A8913B /* HomeBid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeBid.m; sourceTree = "<group>"; };
 		9B9856DA1D3DBB200078AE5D /* GestureManagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureManagerController.h; sourceTree = "<group>"; };
 		9B9856DB1D3DBB200078AE5D /* GestureManagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureManagerController.m; sourceTree = "<group>"; };
+		9BA7958C1D4F3674005830BE /* NSString+XHMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XHMD5.h"; sourceTree = "<group>"; };
+		9BA7958D1D4F3674005830BE /* NSString+XHMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XHMD5.m"; sourceTree = "<group>"; };
+		9BA7958E1D4F3674005830BE /* UIImage+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utility.h"; sourceTree = "<group>"; };
+		9BA7958F1D4F3674005830BE /* UIImage+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
+		9BA795901D4F3674005830BE /* UIImageView+XHURLDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+XHURLDownload.h"; sourceTree = "<group>"; };
+		9BA795911D4F3674005830BE /* UIImageView+XHURLDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+XHURLDownload.m"; sourceTree = "<group>"; };
+		9BA795931D4F3674005830BE /* XHCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHCacheManager.h; sourceTree = "<group>"; };
+		9BA795941D4F3674005830BE /* XHCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHCacheManager.m; sourceTree = "<group>"; };
+		9BA795951D4F3674005830BE /* XHFileAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHFileAttribute.h; sourceTree = "<group>"; };
+		9BA795961D4F3674005830BE /* XHFileAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHFileAttribute.m; sourceTree = "<group>"; };
+		9BA795981D4F3674005830BE /* XHImageURLDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHImageURLDataSource.h; sourceTree = "<group>"; };
+		9BA7959A1D4F3674005830BE /* HJImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJImageView.h; sourceTree = "<group>"; };
+		9BA7959B1D4F3674005830BE /* HJImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HJImageView.m; sourceTree = "<group>"; };
+		9BA7959C1D4F3674005830BE /* XHBottomToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHBottomToolBar.h; sourceTree = "<group>"; };
+		9BA7959D1D4F3674005830BE /* XHBottomToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHBottomToolBar.m; sourceTree = "<group>"; };
+		9BA7959E1D4F3674005830BE /* XHImageViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHImageViewer.h; sourceTree = "<group>"; };
+		9BA7959F1D4F3674005830BE /* XHImageViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHImageViewer.m; sourceTree = "<group>"; };
+		9BA795A01D4F3674005830BE /* XHViewState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHViewState.h; sourceTree = "<group>"; };
+		9BA795A11D4F3674005830BE /* XHViewState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHViewState.m; sourceTree = "<group>"; };
+		9BA795A21D4F3674005830BE /* XHZoomingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHZoomingImageView.h; sourceTree = "<group>"; };
+		9BA795A31D4F3674005830BE /* XHZoomingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHZoomingImageView.m; sourceTree = "<group>"; };
 		9BAF16E71D3CA00300DCA761 /* CLLockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLLockVC.h; sourceTree = "<group>"; };
 		9BAF16E81D3CA00300DCA761 /* CLLockVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLLockVC.m; sourceTree = "<group>"; };
 		9BAF16E91D3CA00300DCA761 /* CLLockVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CLLockVC.xib; sourceTree = "<group>"; };
@@ -1696,6 +1727,67 @@
 			name = "HKPieChartView(环形进度条)";
 			sourceTree = "<group>";
 		};
+		9BA7958A1D4F3674005830BE /* ImageViewer(照片查看) */ = {
+			isa = PBXGroup;
+			children = (
+				9BA7958B1D4F3674005830BE /* Categorys */,
+				9BA795921D4F3674005830BE /* Helpers */,
+				9BA795971D4F3674005830BE /* Protocol */,
+				9BA795991D4F3674005830BE /* Views */,
+			);
+			name = "ImageViewer(照片查看)";
+			path = Source;
+			sourceTree = "<group>";
+		};
+		9BA7958B1D4F3674005830BE /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+				9BA7958C1D4F3674005830BE /* NSString+XHMD5.h */,
+				9BA7958D1D4F3674005830BE /* NSString+XHMD5.m */,
+				9BA7958E1D4F3674005830BE /* UIImage+Utility.h */,
+				9BA7958F1D4F3674005830BE /* UIImage+Utility.m */,
+				9BA795901D4F3674005830BE /* UIImageView+XHURLDownload.h */,
+				9BA795911D4F3674005830BE /* UIImageView+XHURLDownload.m */,
+			);
+			path = Categorys;
+			sourceTree = "<group>";
+		};
+		9BA795921D4F3674005830BE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9BA795931D4F3674005830BE /* XHCacheManager.h */,
+				9BA795941D4F3674005830BE /* XHCacheManager.m */,
+				9BA795951D4F3674005830BE /* XHFileAttribute.h */,
+				9BA795961D4F3674005830BE /* XHFileAttribute.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9BA795971D4F3674005830BE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9BA795981D4F3674005830BE /* XHImageURLDataSource.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		9BA795991D4F3674005830BE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9BA7959A1D4F3674005830BE /* HJImageView.h */,
+				9BA7959B1D4F3674005830BE /* HJImageView.m */,
+				9BA7959C1D4F3674005830BE /* XHBottomToolBar.h */,
+				9BA7959D1D4F3674005830BE /* XHBottomToolBar.m */,
+				9BA7959E1D4F3674005830BE /* XHImageViewer.h */,
+				9BA7959F1D4F3674005830BE /* XHImageViewer.m */,
+				9BA795A01D4F3674005830BE /* XHViewState.h */,
+				9BA795A11D4F3674005830BE /* XHViewState.m */,
+				9BA795A21D4F3674005830BE /* XHZoomingImageView.h */,
+				9BA795A31D4F3674005830BE /* XHZoomingImageView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9BAF16E61D3CA00300DCA761 /* CoreLock */ = {
 			isa = PBXGroup;
 			children = (
@@ -2432,6 +2524,7 @@
 		DF5C9EEF1CAE54BA00F6863B /* Libs(第三方插件) */ = {
 			isa = PBXGroup;
 			children = (
+				9BA7958A1D4F3674005830BE /* ImageViewer(照片查看) */,
 				9BFF6A641D47575600BCC9FC /* FDFullscreenPopGesture */,
 				9BFF6A381D4709E700BCC9FC /* UI调试 */,
 				9B5D59F61D45A43300A8913B /* HKPieChartView(环形进度条) */,
@@ -4306,6 +4399,7 @@
 				DF5CA2DF1CAE54BC00F6863B /* LoanType.m in Sources */,
 				DF5CA2271CAE54BB00F6863B /* AdWebViewController.m in Sources */,
 				DF5CA1F31CAE54BB00F6863B /* InfoNewsViewController.m in Sources */,
+				9BA795A71D4F3674005830BE /* XHCacheManager.m in Sources */,
 				DF5CA2B21CAE54BC00F6863B /* SafeEmail.m in Sources */,
 				DF5CA2371CAE54BB00F6863B /* IQNSArray+Sort.m in Sources */,
 				DF5CA5001CAE645800F6863B /* JoinVipViewController.m in Sources */,
@@ -4319,6 +4413,7 @@
 				DF5CA2BD1CAE54BC00F6863B /* CreditScoreRule.m in Sources */,
 				DF5CA2C31CAE54BC00F6863B /* CollectionBorrow.m in Sources */,
 				DF5CA2EF1CAE54BC00F6863B /* NetWorkRequestManager.m in Sources */,
+				9BA795A91D4F3674005830BE /* HJImageView.m in Sources */,
 				DF5CA2AF1CAE54BC00F6863B /* AccountCenterOrder.m in Sources */,
 				DF5CA2101CAE54BB00F6863B /* ViewTransferContent.m in Sources */,
 				C0DB28171CDC38FA00E67B1D /* NSArray+ ZXPUnicode.m in Sources */,
@@ -4386,6 +4481,7 @@
 				DF5CA3181CAE54BC00F6863B /* CreditorDetailsCell.m in Sources */,
 				DF5CA3221CAE54BC00F6863B /* MoreAboutUsTableViewCell.m in Sources */,
 				DF5CA4DC1CAE645800F6863B /* AssigneeDebtFailureViewController.m in Sources */,
+				9BA795A81D4F3674005830BE /* XHFileAttribute.m in Sources */,
 				DF5CA2AA1CAE54BC00F6863B /* ReimbursementProcessView.m in Sources */,
 				DF5CA2B81CAE54BC00F6863B /* BlackList.m in Sources */,
 				DF5CA2501CAE54BB00F6863B /* MJRefreshBaseView.m in Sources */,
@@ -4513,6 +4609,7 @@
 				DF5CA2B51CAE54BC00F6863B /* AttentionUser.m in Sources */,
 				DF5CA2991CAE54BC00F6863B /* SKSTableView.m in Sources */,
 				DF5CA2FD1CAE54BC00F6863B /* AccountCenterOrderCell.m in Sources */,
+				9BA795A61D4F3674005830BE /* UIImageView+XHURLDownload.m in Sources */,
 				DF5CA2D81CAE54BC00F6863B /* FinancialBills.m in Sources */,
 				DF5CA30A1CAE54BC00F6863B /* AuditSubjectCell.m in Sources */,
 				9BAF17071D3CA00300DCA761 /* CLLockMainView.m in Sources */,
@@ -4528,6 +4625,7 @@
 				DF5CA25A1CAE54BB00F6863B /* AFURLConnectionOperation.m in Sources */,
 				DF5CA2771CAE54BB00F6863B /* SDWebImageDownloader.m in Sources */,
 				DF5CA51F1CAE67F400F6863B /* RepaymentViewController.m in Sources */,
+				9BA795A51D4F3674005830BE /* UIImage+Utility.m in Sources */,
 				DF5CA4FC1CAE645800F6863B /* OutBoxViewController.m in Sources */,
 				DF5CA4C41CAE645800F6863B /* CreditRatingRuleViewController.m in Sources */,
 				DF5CA25B1CAE54BB00F6863B /* AFHTTPSessionManager.m in Sources */,
@@ -4538,6 +4636,7 @@
 				DF5CA1DD1CAE54BB00F6863B /* CustomTextField.m in Sources */,
 				DF5CA2231CAE54BB00F6863B /* ToolNotificationCenter.m in Sources */,
 				DF5CA26E1CAE54BB00F6863B /* QCheckBox.m in Sources */,
+				9BA795AB1D4F3674005830BE /* XHImageViewer.m in Sources */,
 				DF5CA3021CAE54BC00F6863B /* CollectionBorrowsTableViewCell.m in Sources */,
 				DF5CA1D21CAE54BB00F6863B /* FullScaleViewController.m in Sources */,
 				DF5CA4D01CAE645800F6863B /* ReachargeWebViewController.m in Sources */,
@@ -4557,6 +4656,7 @@
 				DF5CA1C31CAE54BB00F6863B /* TenderViewController.m in Sources */,
 				DF5CA2071CAE54BB00F6863B /* ViewBidHot.m in Sources */,
 				DF5CA2421CAE54BB00F6863B /* IQBarButtonItem.m in Sources */,
+				9BA795AC1D4F3674005830BE /* XHViewState.m in Sources */,
 				C0DB28161CDC38FA00E67B1D /* JRSwizzle.m in Sources */,
 				DF5CA2D71CAE54BC00F6863B /* DebtManagement.m in Sources */,
 				DF5CA1E61CAE54BB00F6863B /* GuideViewController.m in Sources */,
@@ -4617,6 +4717,7 @@
 				DF5CA2D91CAE54BC00F6863B /* FinancialComplete.m in Sources */,
 				C0DB28091CDADBFA00E67B1D /* Investment.m in Sources */,
 				DF5CA2EB1CAE54BC00F6863B /* XTNewsObject.m in Sources */,
+				9BA795A41D4F3674005830BE /* NSString+XHMD5.m in Sources */,
 				DF5CA4B81CAE645800F6863B /* InvestmentListViewController.m in Sources */,
 				DF5CA1CF1CAE54BB00F6863B /* CollectionViewController.m in Sources */,
 				DF5CA23B1CAE54BB00F6863B /* IQUIViewController+Additions.m in Sources */,
@@ -4730,6 +4831,7 @@
 				DF5CA2C21CAE54BC00F6863B /* FundRecord.m in Sources */,
 				DF5CA2DB1CAE54BC00F6863B /* FinancialStatistics.m in Sources */,
 				DF5CA32B1CAE54BC00F6863B /* XTTableViewCell.m in Sources */,
+				9BA795AA1D4F3674005830BE /* XHBottomToolBar.m in Sources */,
 				DF5CA23D1CAE54BB00F6863B /* IQDropDownTextField.m in Sources */,
 				DF5CA2BF1CAE54BC00F6863B /* ReviewIntegralDetail.m in Sources */,
 				DF5CA1D11CAE54BB00F6863B /* FinancialStatisticsViewController.m in Sources */,
@@ -4741,6 +4843,7 @@
 				DF5CA4B11CAE645800F6863B /* SetSafeQuestionViewController.m in Sources */,
 				DF5CA2C41CAE54BC00F6863B /* CollectionObligation.m in Sources */,
 				DF5CA24B1CAE54BB00F6863B /* GzipCompressor.m in Sources */,
+				9BA795AD1D4F3674005830BE /* XHZoomingImageView.m in Sources */,
 				DF5CA4B31CAE645800F6863B /* VerifySafeQuestionViewController.m in Sources */,
 				DF5CA2A61CAE54BC00F6863B /* ApplicationRequirementsViewController.m in Sources */,
 				DF5CA4BC1CAE645800F6863B /* AddBankVCardViewController.m in Sources */,
