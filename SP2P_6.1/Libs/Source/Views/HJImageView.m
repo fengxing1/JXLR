@@ -135,14 +135,12 @@
     _imageViewer = [[XHImageViewer alloc]
                     initWithImageViewerWillDismissWithSelectedViewBlock:
                     ^(XHImageViewer *imageViewer, UIImageView *selectedView) {
-                        NSInteger index = [_imageViews indexOfObject:selectedView];
+                        //NSInteger index = [_imageViews indexOfObject:selectedView];
                     }
-                    didDismissWithSelectedViewBlock:^(XHImageViewer *imageViewer,
-                                                      UIImageView *selectedView) {
-                        NSInteger index = [_imageViews indexOfObject:selectedView];
+                    didDismissWithSelectedViewBlock:^(XHImageViewer *imageViewer,UIImageView *selectedView) {
+                        //NSInteger index = [_imageViews indexOfObject:selectedView];
                     }
-                    didChangeToImageViewBlock:^(XHImageViewer *imageViewer,
-                                                UIImageView *selectedView) {
+                    didChangeToImageViewBlock:^(XHImageViewer *imageViewer,UIImageView *selectedView) {
                         NSInteger index = [_imageViews indexOfObject:selectedView];
                         self.bottomToolBar.pageLabel.text = [NSString stringWithFormat:@"%ld/%lu", index + 1, (unsigned long)_imageViews.count];
                         self.bottomToolBar.titleLabel.text = [NSString stringWithFormat:@"%@",_imageTitles[index]];

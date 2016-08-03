@@ -174,7 +174,7 @@
 //    BorrowingDetailsView.amount = object.amount;
     BorrowingDetailsView.rate = object.rate;
     BorrowingDetailsView.timeString = object.time;
-    BorrowingDetailsView.HidesBottomBarWhenPushed = YES;
+    BorrowingDetailsView.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:BorrowingDetailsView animated:YES];
     
     
@@ -186,7 +186,7 @@
 {
     
     InterestcalculatorViewController *interestcalculatorView = [[InterestcalculatorViewController alloc] init];
-    interestcalculatorView.HidesBottomBarWhenPushed = YES;
+    interestcalculatorView.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:interestcalculatorView animated:YES];
     
     

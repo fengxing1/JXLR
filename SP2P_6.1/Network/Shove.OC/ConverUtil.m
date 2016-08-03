@@ -20,7 +20,7 @@ static const char encodingTable[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
         char *characters = malloc(text.length*3/2);
     if (characters == NULL)
         return @"";
-        int end = text.length - 3;
+        int end = (int)text.length - 3;
     int index = 0;
     int charCount = 0;
     int n = 0;

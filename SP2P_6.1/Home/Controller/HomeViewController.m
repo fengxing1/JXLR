@@ -363,7 +363,24 @@ bool isUpdate = YES;
     _viewContentReConnect.hidden=YES;
     
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
-    [self.scrollContent addHeaderWithTarget:self action:@selector(requestData)];
+    MJRefreshGifHeader *gifHeader = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
+    
+    UIImage *image1 = [UIImage imageNamed:@"listview_pull_refresh01"];
+    UIImage *image2 = [UIImage imageNamed:@"listview_pull_refresh02"];
+    NSArray *refreshImages = [NSArray arrayWithObjects:image1,image2, nil];
+    // Hide the time
+    gifHeader.lastUpdatedTimeLabel.hidden = YES;
+    // Hide the status
+    gifHeader.stateLabel.hidden = YES;
+    // 设置普通状态的动画图片
+    [gifHeader setImages:refreshImages forState:MJRefreshStateIdle];
+    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+    [gifHeader setImages:refreshImages forState:MJRefreshStatePulling];
+    // 设置正在刷新状态的动画图片
+    [gifHeader setImages:refreshImages forState:MJRefreshStateRefreshing];
+    
+    _scrollContent.mj_header = gifHeader;
+
 }
 
 -(void)showNewBidDetails:(Investment *)investment{
@@ -613,12 +630,12 @@ bool isUpdate = YES;
 // 隐藏刷新视图
 -(void) hiddenRefreshView
 {
-    if (!_scrollContent.isHeaderHidden) {
-        [_scrollContent headerEndRefreshing];
+    if (!_scrollContent.mj_header.hidden) {
+        [_scrollContent.mj_header endRefreshing];
     }
     
-    if (!_scrollContent.isFooterHidden) {
-        [_scrollContent footerEndRefreshing];
+    if (!_scrollContent.mj_footer.hidden) {
+        [_scrollContent.mj_footer endRefreshing];
     }
 }
 

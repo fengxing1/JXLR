@@ -272,9 +272,26 @@
 -(void) loadData
 {
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
-    [_scrollView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    MJRefreshGifHeader *gifHeader = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRereshing)];
+    
+    UIImage *image1 = [UIImage imageNamed:@"listview_pull_refresh01"];
+    UIImage *image2 = [UIImage imageNamed:@"listview_pull_refresh02"];
+    NSArray *refreshImages = [NSArray arrayWithObjects:image1,image2, nil];
+    // Hide the time
+    gifHeader.lastUpdatedTimeLabel.hidden = YES;
+    // Hide the status
+    gifHeader.stateLabel.hidden = YES;
+    // 设置普通状态的动画图片
+    [gifHeader setImages:refreshImages forState:MJRefreshStateIdle];
+    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+    [gifHeader setImages:refreshImages forState:MJRefreshStatePulling];
+    // 设置正在刷新状态的动画图片
+    [gifHeader setImages:refreshImages forState:MJRefreshStateRefreshing];
+    _scrollView.mj_header = gifHeader;
+    
     // 自动刷新(一进入程序就下拉刷新)
-    [_scrollView headerBeginRefreshing];
+    [_scrollView.mj_header beginRefreshing];
+    
 }
 
 #pragma mark UItableViewdelegate
@@ -570,12 +587,12 @@
 // 隐藏刷新视图
 -(void) hiddenRefreshView
 {
-    if (!self.scrollView.isHeaderHidden) {
-        [self.scrollView headerEndRefreshing];
+    if (!self.scrollView.mj_header.hidden) {
+        [self.scrollView.mj_header endRefreshing];
     }
     
-    if (!self.scrollView.isFooterHidden) {
-        [self.scrollView footerEndRefreshing];
+    if (!self.scrollView.mj_footer.hidden) {
+        [self.scrollView.mj_footer endRefreshing];
     }
 }
 

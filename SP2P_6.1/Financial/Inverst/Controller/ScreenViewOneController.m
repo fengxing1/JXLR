@@ -188,7 +188,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        return 10.0f;
+        return 42.0f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -217,7 +217,7 @@
     cell.textLabel.text = self.contents[indexPath.section][indexPath.row][0];
     cell.textLabel.font = [UIFont systemFontOfSize:14.0f];
     cell.textLabel.textColor=ColorTextContent;
-    cell.isExpandable = YES;
+    cell.expandable = YES;
     return cell;
 }
 
@@ -376,7 +376,6 @@
     
     //先判断是否选中状态
     if (checkbox.checked) {
-        
         ScreenModel *model1 = [[ScreenModel alloc] init];
         model1.Tag = checkbox.tag;
         model1.Checked = checkbox.checked;
@@ -787,7 +786,8 @@
 //            num4 = model.Tag - 300;
 //        }
     }
-    
+    [screenDataArr removeAllObjects]; //Jaqen-start:先清空原先搜索条件
+        
     [screenDataArr addObject:[NSString stringWithFormat:@"%ld",(long)num1]];
     [screenDataArr addObject:[NSString stringWithFormat:@"%ld",(long)num2]];
     [screenDataArr addObject:[NSString stringWithFormat:@"%ld",(long)num3]];

@@ -1,0 +1,16 @@
+
+platform:ios,'7.0'
+target “SP2P_6.1” do
+pod 'MJRefresh'
+pod ‘FMDB’
+pod ‘iCarousel’
+pod ‘IQKeyboardManager’
+pod ‘JSONKit’
+pod ‘MBProgressHUD’
+pod ‘LDProgressView’
+pod ’RESideMenu’
+pod ‘SDWebImage’
+pod ‘SKSTableView’
+pod ‘SVProgressHUD’
+pod ‘AFNetworking’
+end

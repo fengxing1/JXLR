@@ -88,11 +88,38 @@
     [self.view  addSubview:_listView];
     
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
-    [self.listView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    MJRefreshGifHeader *gifHeader = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRereshing)];
+    
+    UIImage *image1 = [UIImage imageNamed:@"listview_pull_refresh01"];
+    UIImage *image2 = [UIImage imageNamed:@"listview_pull_refresh02"];
+    NSArray *refreshImages = [NSArray arrayWithObjects:image1,image2, nil];
+    // Hide the time
+    gifHeader.lastUpdatedTimeLabel.hidden = YES;
+    // Hide the status
+    gifHeader.stateLabel.hidden = YES;
+    // 设置普通状态的动画图片
+    [gifHeader setImages:refreshImages forState:MJRefreshStateIdle];
+    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+    [gifHeader setImages:refreshImages forState:MJRefreshStatePulling];
+    // 设置正在刷新状态的动画图片
+    [gifHeader setImages:refreshImages forState:MJRefreshStateRefreshing];
+    _listView.mj_header = gifHeader;
+    
     // 自动刷新(一进入程序就下拉刷新)
-    [self.listView headerBeginRefreshing];
+    [_listView.mj_header beginRefreshing];
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    //    [self.listView addFooterWithTarget:self action:@selector(footerRereshing)];
+    /*
+    MJRefreshBackGifFooter *gifFooter = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+    // Hide the status
+    gifFooter.stateLabel.hidden = YES;
+    // 设置普通状态的动画图片
+    [gifFooter setImages:refreshImages forState:MJRefreshStateIdle];
+    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+    [gifFooter setImages:refreshImages forState:MJRefreshStatePulling];
+    // 设置正在刷新状态的动画图片
+    [gifFooter setImages:refreshImages forState:MJRefreshStateRefreshing];
+    _listView.mj_footer = gifFooter;
+     */
 }
 
 #pragma mark 开始进入刷新状态
@@ -205,11 +232,12 @@
 // 隐藏刷新视图
 -(void) hiddenRefreshView
 {
-    if (!self.listView.isHeaderHidden) {
-        [self.listView headerEndRefreshing];
+    if (!_listView.mj_header.hidden) {
+        [_listView.mj_header endRefreshing];
     }
-    if (!self.listView.isFooterHidden) {
-        [self.listView footerEndRefreshing];
+    
+    if (!_listView.mj_footer.hidden) {
+        [_listView.mj_footer endRefreshing];
     }
 }
 

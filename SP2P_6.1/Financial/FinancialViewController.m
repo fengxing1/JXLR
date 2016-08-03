@@ -133,8 +133,8 @@
     ScreenViewOneController *controller = [[ScreenViewOneController alloc] init];
     controller.leftMargin = 60;
     
-    UINavigationController *rightNavigationController =  [[UINavigationController alloc] initWithRootViewController:controller];
-    [self performSelector:@selector(changeRightMenuViewController:) withObject:rightNavigationController];
+    //UINavigationController *rightNavigationController =  [[UINavigationController alloc] initWithRootViewController:controller];
+    //[self performSelector:@selector(changeRightMenuViewController:) withObject:rightNavigationController];
     [self performSelector:@selector(presentRightMenuViewController:) withObject:self];
 }
 

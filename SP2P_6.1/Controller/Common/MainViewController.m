@@ -48,19 +48,16 @@
     
     sideMenuViewController.bouncesHorizontally = NO;// 禁用反弹功能
     
-    [sideMenuViewController setContentViewLeftScaleValue:0.8];
-    [sideMenuViewController setContentViewRightScaleValue:1.0];
-    
-    [sideMenuViewController setContentViewInPortraitOffsetLeftCenterX:80];// 主视图水平偏移量
-    [sideMenuViewController setContentViewInPortraitOffsetRightCenterX:100];// 主视图水平偏移量
+    sideMenuViewController.contentViewScaleValue = 0.8;
+    sideMenuViewController.contentViewInPortraitOffsetCenterX = 80;
     
     sideMenuViewController.panFromEdge = NO;// 是否只能从屏幕边缘拖动菜单
     sideMenuViewController.scaleMenuView = NO;// 是否缩放菜单视图
     sideMenuViewController.parallaxEnabled = NO; // 视觉误差
     sideMenuViewController.scaleBackgroundImageView = NO;// 是否缩放背景图
     
-    sideMenuViewController.panLeftGestureEnabled = YES;// 左边菜单是否支持手势
-    sideMenuViewController.panRightGestureEnabled = NO;// 右边菜单是否支持手势
+    sideMenuViewController.panGestureEnabled = NO;// 左边菜单是否支持手势
+    //sideMenuViewController.panRightGestureEnabled = NO;// 右边菜单是否支持手势
     
     navigationController.navigationBar.hidden = YES;
     

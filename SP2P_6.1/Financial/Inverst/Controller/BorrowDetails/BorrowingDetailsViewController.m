@@ -1025,7 +1025,7 @@
                                              _listView.contentSize = CGSizeMake(WidthScreen, _heightContainTableView+[_AuditdataArr count]*35+20);
                                          }
                                         closeBlock:^(UIView *subClassView, CFTimeInterval duration, CAMediaTimingFunction *timingFunction){
-                                            
+                            
                                         }
                                    completionBlock:^{
                                        _listView.contentSize = CGSizeMake(WidthScreen, _heightContainTableView);

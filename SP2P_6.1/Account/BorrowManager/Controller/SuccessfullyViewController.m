@@ -80,11 +80,36 @@
     [self.view addSubview:_tableView];
     
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
-    [_tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    MJRefreshGifHeader *gifHeader = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRereshing)];
+    
+    UIImage *image1 = [UIImage imageNamed:@"listview_pull_refresh01"];
+    UIImage *image2 = [UIImage imageNamed:@"listview_pull_refresh02"];
+    NSArray *refreshImages = [NSArray arrayWithObjects:image1,image2, nil];
+    // Hide the time
+    gifHeader.lastUpdatedTimeLabel.hidden = YES;
+    // Hide the status
+    gifHeader.stateLabel.hidden = YES;
+    // 设置普通状态的动画图片
+    [gifHeader setImages:refreshImages forState:MJRefreshStateIdle];
+    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+    [gifHeader setImages:refreshImages forState:MJRefreshStatePulling];
+    // 设置正在刷新状态的动画图片
+    [gifHeader setImages:refreshImages forState:MJRefreshStateRefreshing];
+    _tableView.mj_header = gifHeader;
+    
     // 自动刷新(一进入程序就下拉刷新)
-    [_tableView headerBeginRefreshing];
+    [_tableView.mj_header beginRefreshing];
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    [_tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    MJRefreshBackGifFooter *gifFooter = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+    // Hide the status
+    gifFooter.stateLabel.hidden = YES;
+    // 设置普通状态的动画图片
+    [gifFooter setImages:refreshImages forState:MJRefreshStateIdle];
+    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+    [gifFooter setImages:refreshImages forState:MJRefreshStatePulling];
+    // 设置正在刷新状态的动画图片
+    [gifFooter setImages:refreshImages forState:MJRefreshStateRefreshing];
+    _tableView.mj_footer = gifFooter;
     
 }
 
@@ -352,12 +377,12 @@
 // 隐藏刷新视图
 -(void) hiddenRefreshView
 {
-    if (!self.tableView.isHeaderHidden) {
-        [self.tableView headerEndRefreshing];
+    if (!self.tableView.mj_header.hidden) {
+        [self.tableView.mj_header endRefreshing];
     }
     
-    if (!self.tableView.isFooterHidden) {
-        [self.tableView footerEndRefreshing];
+    if (!self.tableView.mj_footer.hidden) {
+        [self.tableView.mj_footer endRefreshing];
     }
 }
 

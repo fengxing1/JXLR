@@ -58,7 +58,9 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(startRequestLogin)]) {
             [self.delegate startRequestLogin];
         }
-        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
             [self responseSuccessLogin:responseObject];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(responseFailure:)]) {
@@ -162,7 +164,9 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(startRequestRegisterMessage)]) {
             [self.delegate startRequestRegisterMessage];
         }
-        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
             [self responseSuccessRegisterMessage:responseObject];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(responseFailure:)]) {
@@ -207,7 +211,9 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(startRequestGetVerification)]) {
             [self.delegate startRequestGetVerification];
         }
-        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
             [self responseSuccessVerification:responseObject];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(responseFailure:)]) {
@@ -254,7 +260,9 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(startRequestVerificationIsTrue)]) {
             [self.delegate startRequestVerificationIsTrue];
         }
-        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
             [self responseSuccessVerificationIsTrue:responseObject];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(responseFailure:)]) {
@@ -303,7 +311,9 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(startRequestChangePassword)]) {
             [self.delegate startRequestChangePassword];
         }
-        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
             [self responseSuccessChangePassword:responseObject];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(responseFailure:)]) {
@@ -365,7 +375,9 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(startRequestNewBid)]) {
             [self.delegate startRequestNewBid];
         }
-        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
             [self responseSuccessNewBid:responseObject];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(responseFailure:)]) {
@@ -476,7 +488,9 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(startRequestBorrowDetail)]) {
             [self.delegate startRequestBorrowDetail];
         }
-        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
             [self responseSuccessBorrowDetail:responseObject];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(responseFailure:)]) {
@@ -516,7 +530,9 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(startRequestHomeMessage)]) {
             [self.delegate startRequestHomeMessage];
         }
-        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
             [self responseSuccessHomeMessage:responseObject];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(responseFailure:)]) {
@@ -625,7 +641,9 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(startRequestRegister)]) {
             [self.delegate startRequestRegister];
         }
-        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        netWorkBasic.dataTask = [netWorkBasic GET:restUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask *task, id responseObject) {
             [self responseSuccessRegister:responseObject];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(responseFailure:)]) {

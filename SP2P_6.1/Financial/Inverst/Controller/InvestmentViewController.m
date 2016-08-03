@@ -78,11 +78,37 @@ extern NSString *headertitle;
 - (void)initView
 {
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
-    [self.tableView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    MJRefreshGifHeader *gifHeader = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRereshing)];
+    
+    UIImage *image1 = [UIImage imageNamed:@"listview_pull_refresh01"];
+    UIImage *image2 = [UIImage imageNamed:@"listview_pull_refresh02"];
+    NSArray *refreshImages = [NSArray arrayWithObjects:image1,image2, nil];
+    // Hide the time
+    gifHeader.lastUpdatedTimeLabel.hidden = YES;
+    // Hide the status
+    gifHeader.stateLabel.hidden = YES;
+    // 设置普通状态的动画图片
+    [gifHeader setImages:refreshImages forState:MJRefreshStateIdle];
+    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+    [gifHeader setImages:refreshImages forState:MJRefreshStatePulling];
+    // 设置正在刷新状态的动画图片
+    [gifHeader setImages:refreshImages forState:MJRefreshStateRefreshing];
+    _tableView.mj_header = gifHeader;
+    
     // 自动刷新(一进入程序就下拉刷新)
-    [self.tableView headerBeginRefreshing];
+    [_tableView.mj_header beginRefreshing];
     // 2.上拉加载更多(进入刷新状态就会调用self的footerRereshing)
-    [self.tableView addFooterWithTarget:self action:@selector(footerRereshing)];
+    
+    MJRefreshBackGifFooter *gifFooter = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(footerRereshing)];
+    // Hide the status
+    gifFooter.stateLabel.hidden = YES;
+    // 设置普通状态的动画图片
+    [gifFooter setImages:refreshImages forState:MJRefreshStateIdle];
+    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+    [gifFooter setImages:refreshImages forState:MJRefreshStatePulling];
+    // 设置正在刷新状态的动画图片
+    [gifFooter setImages:refreshImages forState:MJRefreshStateRefreshing];
+    _tableView.mj_footer = gifFooter;
 }
 
 #pragma mark 开始进入刷新状态
@@ -155,7 +181,7 @@ extern NSString *headertitle;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // (最好在刷新表格后调用)调用endRefreshing可以结束刷新状态
-        [self.tableView footerEndRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     });
 }
 
@@ -168,7 +194,7 @@ extern NSString *headertitle;
     BorrowingDetailsView.rate = investment.rate;
     BorrowingDetailsView.timeString = investment.time;
     BorrowingDetailsView.stateNum = 0;
-    BorrowingDetailsView.HidesBottomBarWhenPushed = YES;
+    BorrowingDetailsView.hidesBottomBarWhenPushed = YES;
     [self presentViewOrPushController:BorrowingDetailsView animated:YES completion:nil withNewNavgation:YES];
 }
 #pragma mark
@@ -398,7 +424,7 @@ extern NSString *headertitle;
     BorrowingDetailsView.rate = object.rate;
     BorrowingDetailsView.timeString = object.time;
     BorrowingDetailsView.stateNum = 0;
-    BorrowingDetailsView.HidesBottomBarWhenPushed = YES;
+    BorrowingDetailsView.hidesBottomBarWhenPushed = YES;
     //[self presentViewOrPushController:BorrowingDetailsView animated:YES completion:nil withNewNavgation:YES];
     
     [self.navigationController pushViewController:BorrowingDetailsView animated:YES];
@@ -407,11 +433,12 @@ extern NSString *headertitle;
 // 隐藏刷新视图
 -(void) hiddenRefreshView
 {
-    if (!self.tableView.isHeaderHidden) {
-        [self.tableView headerEndRefreshing];
+    if (!self.tableView.mj_header.hidden) {
+        [self.tableView.mj_header endRefreshing];
     }
-    if (!self.tableView.isFooterHidden) {
-        [self.tableView footerEndRefreshing];
+    
+    if (!self.tableView.mj_footer.hidden) {
+        [self.tableView.mj_footer endRefreshing];
     }
 }
 

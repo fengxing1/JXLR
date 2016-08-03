@@ -430,7 +430,7 @@
         }else if(_requestType == 1){
             //DLOG(@"msg  -> %@", [obj objectForKey:@"msg"]);
             
-            [SVProgressHUD showSuccessWithStatusNoAuto:[obj objectForKey:@"msg"]];
+            [SVProgressHUD showSuccessWithStatus:[obj objectForKey:@"msg"]];
             
             [[AppDefaultUtil sharedInstance] setDefaultUserNoPassword:_nPassWord.text];// 保存用户密码（未加密）
             NSString *pwdStr = [NSString encrypt3DES:_nPassWord.text key:DESkey];//用户密码3Des加密

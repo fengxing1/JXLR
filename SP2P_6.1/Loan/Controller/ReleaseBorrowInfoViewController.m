@@ -1325,90 +1325,60 @@
 - (void)saveImage:(UIImage *)image
 {
     _imgView.image = image;
+    
     if (image!=nil) {
         
         
         NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
         [parameters setObject:@"1" forKey:@"type"];
         
-        // 1. Create `AFHTTPRequestSerializer` which will create your request.
-        AFHTTPRequestSerializer *serializer = [AFHTTPRequestSerializer serializer];
         
         NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
         
-        // 2. Create an `NSMutableURLRequest`.
-        
-        NSMutableURLRequest *request = [serializer multipartFormRequestWithMethod:@"POST"
-                                                                        URLString:[NSString stringWithFormat:@"%@%@",Baseurl,@"/app/uploadPhoto"]
-                                                                       parameters:parameters
-                                                        constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-                                                            
-                                                            
-                                                            //上传时使用当前的系统事件作为文件名
-                                                            
-                                                            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-                                                            
-                                                            formatter.dateFormat = @"yyyyMMddHHmmss";
-                                                            formatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
-                                                            
-                                                            NSString *str = [formatter stringFromDate:[NSDate date]];
-                                                            
-                                                            NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
-                                                            //
-                                                            
-                                                            
-                                                            [formData appendPartWithFileData:imageData
-                                                                                        name:@"imgFile"
-                                                                                    fileName:fileName
-                                                                                    mimeType:@"image/jpeg"];
-                                                        } error:nil];
-        
-        // 3. Create and use `AFHTTPRequestOperationManager` to create an `AFHTTPRequestOperation` from the `NSMutableURLRequest` that we just created.
-        //DLOG(@">>>>>>>>request>>>>>>%@<<<<<<<", request);
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-        AFHTTPRequestOperation *operation =
-        [manager HTTPRequestOperationWithRequest:request
-                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                             //DLOG(@"Success >>>>>>>>>>>>>>>>>%@", responseObject);
-                                             NSDictionary *dic = (NSDictionary *)responseObject;
-                                             
-                                             if([[dic objectForKey:@"error"] integerValue] == -1)
-                                             {
-                                                 //                                             _borrowImgStr =[NSString stringWithFormat:@"%@%@", Baseurl, [dic objectForKey:@"filename"]] ;
-                                                 _borrowImgStr =[NSString stringWithFormat:@"%@",[dic objectForKey:@"filename"]] ;
-                                                 [SVProgressHUD showSuccessWithStatus:@"上传成功!"];
-                                                 //DLOG(@"图片连接 is %@",_borrowImgStr);
-                                                 
-                                             }else{
-                                                 
-                                                 _borrowImgStr = @"";
-                                                 [SVProgressHUD showErrorWithStatus:[dic objectForKey:@"msg"]];
-                                                 
-                                                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * 600000000ull)), dispatch_get_main_queue(), ^{
-                                                     
-                                                     
-                                                     
-                                                 });
-                                                 
-                                                 
-                                             }
-                                             
-                                             
-                                         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                             //DLOG(@"Failure >>>>>>>>>>>>>>>>>%@", error.description);
-                                         }];
         
-        // 4. Set the progress block of the operation.
-        [operation setUploadProgressBlock:^(NSUInteger __unused bytesWritten,
-                                            long long totalBytesWritten,
-                                            long long totalBytesExpectedToWrite) {
-            //DLOG(@"Wrote >>>>>>>>>>>>>>>>>%lld/%lld", totalBytesWritten, totalBytesExpectedToWrite);
+        [manager POST:[NSString stringWithFormat:@"%@%@",Baseurl,@"/app/uploadPhoto"] parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+            //上传时使用当前的系统事件作为文件名
+            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            
+            formatter.dateFormat = @"yyyyMMddHHmmss";
+            formatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
+            
+            NSString *str = [formatter stringFromDate:[NSDate date]];
+            
+            NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
+           
+            [formData appendPartWithFileData:imageData name:@"imgFile" fileName:fileName mimeType:@"image/jpeg"];
+        } progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSDictionary *dic = (NSDictionary *)responseObject;
+            
+            if([[dic objectForKey:@"error"] integerValue] == -1)
+            {
+                //                                             _borrowImgStr =[NSString stringWithFormat:@"%@%@", Baseurl, [dic objectForKey:@"filename"]] ;
+                _borrowImgStr =[NSString stringWithFormat:@"%@",[dic objectForKey:@"filename"]] ;
+                [SVProgressHUD showSuccessWithStatus:@"上传成功!"];
+                //DLOG(@"图片连接 is %@",_borrowImgStr);
+                
+            }else{
+                
+                _borrowImgStr = @"";
+                [SVProgressHUD showErrorWithStatus:[dic objectForKey:@"msg"]];
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * 600000000ull)), dispatch_get_main_queue(), ^{
+                    
+                    
+                    
+                });
+                
+                
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
         }];
-        
-        // 5. Begin!
-        [operation start];
-        //DLOG(@">>>>>>>>>>>>>>>END<<<<<<<<<<<<<<<<<");
         
     }
 }

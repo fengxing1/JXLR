@@ -41,16 +41,17 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(startRequest)]) {
             [self.delegate startRequest];
         }
-        _dataTask = [self GET:restUrl parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        _dataTask = [self GET:restUrl parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(httpResponseSuccess:dataTask:didSuccessWithObject:)]) {
                 [self.delegate httpResponseSuccess:self dataTask:task didSuccessWithObject:responseObject];
             }
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             if (self.delegate && [self.delegate respondsToSelector:@selector(httpResponseSuccess:dataTask:didSuccessWithObject:)]) {
                 [self.delegate httpResponseFailure:self dataTask:task didFailWithError:error];
             }
         }];
-        
     }
     return _dataTask;
 }

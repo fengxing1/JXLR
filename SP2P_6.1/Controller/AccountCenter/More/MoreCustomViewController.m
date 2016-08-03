@@ -63,7 +63,7 @@
 - (void)initContent
 {
     _logoView = [UIButton buttonWithType:UIButtonTypeCustom];
-    _logoView.Frame = CGRectMake((self.view.frame.size.width - 80) * 0.5, SpaceBig, 80, 80);
+    _logoView.frame = CGRectMake((self.view.frame.size.width - 80) * 0.5, SpaceBig, 80, 80);
     [_logoView.layer setMasksToBounds:YES];
     [_logoView.layer setCornerRadius:30.0]; //设置矩形四个圆角半径
 //    [_logoView addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];

@@ -162,7 +162,7 @@
     if (indexPath.section < 3) {
         cell.textLabel.text = self.contents[indexPath.section][indexPath.row][0];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:14.0f];
-        cell.isExpandable = YES;
+        cell.expandable = YES;
         
         return cell;
     }
@@ -172,7 +172,7 @@
         
         
         cell.textLabel.text = nil;
-        cell.isExpandable = NO;
+        cell.expandable = NO;
         cell.userInteractionEnabled = NO;
         return cell;
     }
@@ -204,7 +204,7 @@
         [cell.contentView addSubview:SureBtn];
         
         
-        cell.isExpandable = NO;
+        cell.expandable = NO;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }

@@ -508,6 +508,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if (AppDelegateInstance.userInfo == nil) {
         [SVProgressHUD showErrorWithStatus:@"请登录!"];
     }else{
@@ -515,6 +516,7 @@
             case 0://投资管理
             {
                 ViewControllerInvestManager *vc=[[ViewControllerInvestManager alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
                 //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
             }
@@ -522,6 +524,7 @@
             case 1://借款管理
             {
                 ViewControllerBorrowManager *vc=[[ViewControllerBorrowManager alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
                 //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
             }
@@ -529,6 +532,7 @@
             case 2://债权管理
             {
                 DebtManagementViewController *vc=[[DebtManagementViewController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
                 //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
             }
@@ -536,6 +540,7 @@
             case 3://资金流水
             {
                 FundRecordViewController *vc=[[FundRecordViewController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
                 //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
             }
@@ -543,6 +548,7 @@
             case 4://站内信息
             {
                 MailViewController *vc=[[MailViewController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
                 //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
                 break;
@@ -550,6 +556,7 @@
             case 5://帐户管理
             {
                 ViewControllerAccountManager *vc=[[ViewControllerAccountManager alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
                 //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
                 break;
@@ -557,6 +564,7 @@
             case 6://我的银行卡
             {
                 BankCardManageViewController *vc=[[BankCardManageViewController alloc] init];
+                vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
                 //[self presentViewOrPushController:vc animated:YES completion:nil withNewNavgation:YES];
             }

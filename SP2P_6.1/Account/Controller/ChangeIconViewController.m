@@ -179,107 +179,71 @@
 {
   
     if (_hearImg!= nil) {
- 
 
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-    [parameters setObject:AppDelegateInstance.userInfo.userId forKey:@"userId"];
-    [parameters setObject:@"1" forKey:@"type"];
+        NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+        [parameters setObject:AppDelegateInstance.userInfo.userId forKey:@"userId"];
+        [parameters setObject:@"1" forKey:@"type"];
 
-    // 1. Create `AFHTTPRequestSerializer` which will create your request.
-    AFHTTPRequestSerializer *serializer = [AFHTTPRequestSerializer serializer];
-    
-    
-    NSData *imageData = UIImageJPEGRepresentation(_hearImg, 0.5);
-    
-//    NSString *restUrl = [ShoveGeneralRestGateway buildUrl:@"/app/services" key:MD5key parameters:parameters];
-//
-//    //DLOG(@">>>>>>>>>URL>>>>>>%@<<<<<<<", [NSString stringWithFormat:@"%@%@", Baseurl, restUrl]);
-    
-    
-    // 2. Create an `NSMutableURLRequest`.
-    
-    NSMutableURLRequest *request = [serializer multipartFormRequestWithMethod:@"POST" URLString:[NSString stringWithFormat:@"%@%@",Baseurl,@"/app/uploadUserPhoto"]
-                                                                   parameters:parameters
-                                                    constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        NSData *imageData = UIImageJPEGRepresentation(_hearImg, 0.5);
         
-        
-        //上传时使用当前的系统事件作为文件名
-        
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        
-        formatter.dateFormat = @"yyyyMMddHHmmss";
-                                                        
-        formatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
-                                                        
-        NSString *str = [formatter stringFromDate:[NSDate date]];
-        
-        NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
-        //
-        
-        
-        [formData appendPartWithFileData:imageData
-                                    name:@"imgFile"
-                                fileName:fileName
-                                mimeType:@"image/jpeg"];
-    } error:nil];
-    
-    // 3. Create and use `AFHTTPRequestOperationManager` to create an `AFHTTPRequestOperation` from the `NSMutableURLRequest` that we just created.
-    //DLOG(@">>>>>>>>request>>>>>>%@<<<<<<<", request);
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    AFHTTPRequestOperation *operation =
-    [manager HTTPRequestOperationWithRequest:request
-                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                         //DLOG(@"Success >>>>>>>>>>>>>>>>>%@", responseObject);
-                                         NSDictionary *dic = (NSDictionary *)responseObject;
-                                         if([[dic objectForKey:@"error"] integerValue] == -1)
-                                         {
-                                             [SVProgressHUD showSuccessWithStatus:[dic objectForKey:@"msg"]];
-                                            
-                                             if ([[NSString stringWithFormat:@"%@",[dic objectForKey:@"filename"]] hasPrefix:@"http"]) {
-                                                 AppDelegateInstance.userInfo.userImg =[NSString stringWithFormat:@"%@",[dic objectForKey:@"filename"]] ;
-                                                   [[AppDefaultUtil sharedInstance] setDefaultHeaderImageUrl:[NSString stringWithFormat:@"%@", [dic objectForKey:@"filename"]]];
-                                             }else
-                                             {
-                                                 
-                                              AppDelegateInstance.userInfo.userImg =[NSString stringWithFormat:@"%@%@", Baseurl, [dic objectForKey:@"filename"]] ;
-                                                   [[AppDefaultUtil sharedInstance] setDefaultHeaderImageUrl:[NSString stringWithFormat:@"%@%@", Baseurl, [dic objectForKey:@"filename"]]];
-                                             }
-                                           
-                                             
-                                             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * 600000000ull)), dispatch_get_main_queue(), ^{
-                                                 
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
             
-                                                 [self dismissViewControllerAnimated:YES completion:^(){}];
-                                                 
-                                             });
-    
-                                         }else{
-                                         
-                                         
-                                           [SVProgressHUD showErrorWithStatus:[dic objectForKey:@"msg"]];
-                                         
-                                         
-                                         }
-                         
+        [manager POST:[NSString stringWithFormat:@"%@%@",Baseurl,@"/app/uploadUserPhoto"] parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+            //上传时使用当前的系统事件作为文件名
             
-                                    [[NSNotificationCenter defaultCenter]  postNotificationName:@"update" object:nil];
-                                      
-                                         
-                                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                         //DLOG(@"Failure >>>>>>>>>>>>>>>>>%@", error.description);
-                                     }];
-    
-    // 4. Set the progress block of the operation.
-    [operation setUploadProgressBlock:^(NSUInteger __unused bytesWritten,
-                                        long long totalBytesWritten,
-                                        long long totalBytesExpectedToWrite) {
-        //DLOG(@"Wrote >>>>>>>>>>>>>>>>>%lld/%lld", totalBytesWritten, totalBytesExpectedToWrite);
-    }];
-    
-    // 5. Begin!
-    [operation start];
-    //DLOG(@">>>>>>>>>>>>>>>END<<<<<<<<<<<<<<<<<");
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            
+            formatter.dateFormat = @"yyyyMMddHHmmss";
+            
+            formatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
+            
+            NSString *str = [formatter stringFromDate:[NSDate date]];
+            
+            NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
+            //
+            
+            
+            [formData appendPartWithFileData:imageData
+                                        name:@"imgFile"
+                                    fileName:fileName
+                                    mimeType:@"image/jpeg"];
+        } progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSDictionary *dic = (NSDictionary *)responseObject;
+            if([[dic objectForKey:@"error"] integerValue] == -1)
+            {
+                [SVProgressHUD showSuccessWithStatus:[dic objectForKey:@"msg"]];
+                
+                if ([[NSString stringWithFormat:@"%@",[dic objectForKey:@"filename"]] hasPrefix:@"http"]) {
+                    AppDelegateInstance.userInfo.userImg =[NSString stringWithFormat:@"%@",[dic objectForKey:@"filename"]] ;
+                    [[AppDefaultUtil sharedInstance] setDefaultHeaderImageUrl:[NSString stringWithFormat:@"%@", [dic objectForKey:@"filename"]]];
+                }else
+                {
+                    
+                    AppDelegateInstance.userInfo.userImg =[NSString stringWithFormat:@"%@%@", Baseurl, [dic objectForKey:@"filename"]] ;
+                    [[AppDefaultUtil sharedInstance] setDefaultHeaderImageUrl:[NSString stringWithFormat:@"%@%@", Baseurl, [dic objectForKey:@"filename"]]];
+                }
+                
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * 600000000ull)), dispatch_get_main_queue(), ^{
+                    
+                    
+                    [self dismissViewControllerAnimated:YES completion:^(){}];
+                    
+                });
+                
+            }else{
+                [SVProgressHUD showErrorWithStatus:[dic objectForKey:@"msg"]];
+            }
+            
+            
+            [[NSNotificationCenter defaultCenter]  postNotificationName:@"update" object:nil];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+        }];
+        
         
     }
    

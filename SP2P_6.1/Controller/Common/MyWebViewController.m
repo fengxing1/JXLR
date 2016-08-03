@@ -86,7 +86,7 @@
         NSString *lJs = @"document.documentElement.innerHTML";//获取当前网页的html
         NSString *htmlString = [webView stringByEvaluatingJavaScriptFromString:lJs];
         
-        [webView loadHTMLString:nil baseURL:nil];
+        [webView loadHTMLString:curURL baseURL:nil];
         
         // 去掉所有标签
         NSString *jsonString = [self filterHTML:htmlString];
@@ -169,7 +169,7 @@
             [navroot dismissViewControllerAnimated:YES completion:nil];
         }else{
             //从充值页面进入到开户
-            int index=[[self.navigationController viewControllers]indexOfObject:self];
+            int index = (int)[[self.navigationController viewControllers]indexOfObject:self];
             if(index>1){
                 [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:index-2]animated:YES];
             }else{

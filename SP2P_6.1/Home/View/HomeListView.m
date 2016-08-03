@@ -166,7 +166,7 @@
                 [_scrollView addSubview:label];
     
                 UITapGestureRecognizer *tapClick1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
-                UIView *tapview = [tapClick1 view];
+//                UIView *tapview = [tapClick1 view];
 //                tapview.tag = label.tag;
                 tapClick1.numberOfTapsRequired = 1;
                 tapClick1.numberOfTouchesRequired = 1;
